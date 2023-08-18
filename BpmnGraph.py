@@ -1,20 +1,14 @@
 import xml.etree.ElementTree as ET
-
+import re
 import networkx as nx
 from matplotlib import pyplot as plt
 
+from BpmnConstants import BpmnConstants as BC
 from BpmnNode import BpmnNode
+from BpmnVisualizer import BpmnVisualizer
 
 
 class BpmnGraph:
-    SEQUENCE_FLOW = './/bpmn:sequenceFlow'
-    USER_TASK = './/bpmn:userTask'
-    EXCLUSIVE_GATEWAY = './/bpmn:exclusiveGateway'
-    SERVICE_TASK = './/bpmn:serviceTask'
-    END_EVENT = './/bpmn:endEvent'
-    START_EVENT = './/bpmn:startEvent'
-    TARGET_NODE = 'targetRef'
-    SOURCE_NODE = 'sourceRef'
     nodes = []
     namespace = {
         'bpmn': 'http://www.omg.org/spec/BPMN/20100524/MODEL'
@@ -24,12 +18,12 @@ class BpmnGraph:
         self.path = path
         self.tree = ET.parse(path)
         self.root = self.tree.getroot()
-        self.sequence_flows = self.root.findall(BpmnGraph.SEQUENCE_FLOW, self.namespace)
-        self.user_tasks = self.root.findall(BpmnGraph.USER_TASK, self.namespace)
-        self.exclusive_gateways = self.root.findall(BpmnGraph.EXCLUSIVE_GATEWAY, self.namespace)
-        self.service_tasks = self.root.findall(BpmnGraph.SERVICE_TASK, self.namespace)
-        self.end_event = self.root.findall(BpmnGraph.END_EVENT, self.namespace)
-        self.start_event = self.root.findall(BpmnGraph.START_EVENT, self.namespace)
+        self.sequence_flows = self.root.findall(BC.SEQUENCE_FLOW, self.namespace)
+        self.user_tasks = self.root.findall(BC.USER_TASK, self.namespace)
+        self.exclusive_gateways = self.root.findall(BC.EXCLUSIVE_GATEWAY, self.namespace)
+        self.service_tasks = self.root.findall(BC.SERVICE_TASK, self.namespace)
+        self.end_event = self.root.findall(BC.END_EVENT, self.namespace)
+        self.start_event = self.root.findall(BC.START_EVENT, self.namespace)
         self.G = nx.Graph()
         self._create_all_nodes()
         self._create_all_edges()
@@ -42,30 +36,7 @@ class BpmnGraph:
 
     def visualize_all_paths(self):
         all_paths = self.get_all_paths()
-        if not all_paths:
-            print("No paths found.")
-            return
-
-        pos = nx.spring_layout(self.G)  # Layout algorithm for visualization
-
-        for path_index, path in enumerate(all_paths, start=1):
-            plt.figure(figsize=(8, 6))
-
-            # Create a subgraph containing only nodes and edges in the current path
-            path_subgraph = self.G.subgraph(path).copy()
-
-            # Draw all nodes and edges in the main graph (non-path elements)
-            node_labels = {node: node.name for node in self.G.nodes()}  # Use node names as labels
-            nx.draw(self.G, pos, node_size=500, node_color='lightblue', font_size=8, labels=node_labels)
-            nx.draw_networkx_edges(self.G, pos, edgelist=self.G.edges(), edge_color='gray', alpha=0.5)
-
-            # Draw nodes and edges in the current path with different styles
-            path_node_labels = {node: node.name for node in path_subgraph.nodes()}  # Use node names as labels
-            nx.draw(path_subgraph, pos, node_size=500, node_color='red', font_size=8,
-                    edge_color='red', width=2, labels=path_node_labels)
-
-            plt.title(f"Path {path_index}")
-            plt.show()
+        BpmnVisualizer.visualize_paths(self.G, all_paths)
 
     def _get_start_node(self):
         return self._get_node_by_id(self.start_event[0].get('id'))
@@ -79,6 +50,10 @@ class BpmnGraph:
     def print_all_sequence_flows(self):
         for flow in self.sequence_flows:
             print(f"Source: {flow.get('sourceRef')}, Target: {flow.get('targetRef')}")
+            # condition_expression = flow.find(self.CONDITION_EXPRESSION, self.namespace)
+            # if condition_expression is not None:
+            #     condition_text = condition_expression.text
+            #     print(condition_text)
 
     def print_all_nodes(self):
         for node in self.G.nodes:
@@ -91,9 +66,19 @@ class BpmnGraph:
 
     def _create_all_edges(self):
         for flow in self.sequence_flows:
-            source_node = self._get_node_by_id(flow.get(self.SOURCE_NODE))
-            target_node = self._get_node_by_id(flow.get(self.TARGET_NODE))
-            # print(f"Source: {source_node}, Target: {target_node}")
+            source_node = self._get_node_by_id(flow.get(BC.SOURCE_NODE))
+            target_node = self._get_node_by_id(flow.get(BC.TARGET_NODE))
+            condition_expression = flow.find(BC.CONDITION_EXPRESSION, self.namespace)
+            if condition_expression is not None:
+                condition_text = condition_expression.text
+                pattern = r"#\{(.*?) == '(.*?)'\}"
+                matches = re.findall(pattern, condition_text)
+                if matches:
+                    var_name, var_value = matches[0]
+                    source_node.decision_var = var_name
+                    target_node.decision_var = var_name
+                    target_node.decision_var_val = var_value
+
             self.G.add_edge(source_node, target_node)
 
     def _create_all_nodes(self):
