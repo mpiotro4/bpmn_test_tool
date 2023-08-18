@@ -81,7 +81,13 @@ class BpmnGraph:
             print(f"Source: {flow.get('sourceRef')}, Target: {flow.get('targetRef')}")
 
     def print_all_nodes(self):
-        self._for_all_nodes(function=self._print_nodes)
+        for node in self.G.nodes:
+            print(node)
+
+    def print_all_edges(self):
+        for edge in self.G.edges:
+            source_node, target_node = edge
+            print(f"Edge: {source_node} -> {target_node}")
 
     def _create_all_edges(self):
         for flow in self.sequence_flows:

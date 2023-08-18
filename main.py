@@ -33,8 +33,11 @@ if __name__ == "__main__":
     nx.draw(graph, pos, labels=node_labels, node_size=2000, node_color='skyblue', font_size=10, font_color='black')
     plt.show()
 
+    bpmnGraph.print_all_nodes()
+    bpmnGraph.print_all_edges()
+
     paths = bpmnGraph.get_all_paths()
     print("All Paths:")
     for path in paths:
-        print(" -> ".join(node.id for node in path))
+        print(" -> ".join(node.name for node in path))
     bpmnGraph.visualize_all_paths()
