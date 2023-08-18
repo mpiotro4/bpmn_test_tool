@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 
 import networkx as nx
+from matplotlib import pyplot as plt
 
 from BpmnNode import BpmnNode
 
@@ -32,6 +33,45 @@ class BpmnGraph:
         self.G = nx.Graph()
         self._create_all_nodes()
         self._create_all_edges()
+
+    def get_all_paths(self):
+        start_node = self._get_start_node()
+        end_node = self._get_end_node()
+        all_paths = list(nx.all_simple_paths(self.G, source=start_node, target=end_node))
+        return all_paths
+
+    def visualize_all_paths(self):
+        all_paths = self.get_all_paths()
+        if not all_paths:
+            print("No paths found.")
+            return
+
+        pos = nx.spring_layout(self.G)  # Layout algorithm for visualization
+
+        for path_index, path in enumerate(all_paths, start=1):
+            plt.figure(figsize=(8, 6))
+
+            # Create a subgraph containing only nodes and edges in the current path
+            path_subgraph = self.G.subgraph(path).copy()
+
+            # Draw all nodes and edges in the main graph (non-path elements)
+            node_labels = {node: node.name for node in self.G.nodes()}  # Use node names as labels
+            nx.draw(self.G, pos, node_size=500, node_color='lightblue', font_size=8, labels=node_labels)
+            nx.draw_networkx_edges(self.G, pos, edgelist=self.G.edges(), edge_color='gray', alpha=0.5)
+
+            # Draw nodes and edges in the current path with different styles
+            path_node_labels = {node: node.name for node in path_subgraph.nodes()}  # Use node names as labels
+            nx.draw(path_subgraph, pos, node_size=500, node_color='red', font_size=8,
+                    edge_color='red', width=2, labels=path_node_labels)
+
+            plt.title(f"Path {path_index}")
+            plt.show()
+
+    def _get_start_node(self):
+        return self._get_node_by_id(self.start_event[0].get('id'))
+
+    def _get_end_node(self):
+        return self._get_node_by_id(self.end_event[0].get('id'))
 
     def get_graph(self):
         return self.G
@@ -81,7 +121,6 @@ class BpmnGraph:
         return None
 
     def __del__(self):
-        # Clear the data structures when the object is deleted
         self.sequence_flows.clear()
         self.user_tasks.clear()
         self.exclusive_gateways.clear()

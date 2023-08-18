@@ -32,3 +32,9 @@ if __name__ == "__main__":
     pos = nx.spring_layout(graph)  # Positioning of nodes
     nx.draw(graph, pos, labels=node_labels, node_size=2000, node_color='skyblue', font_size=10, font_color='black')
     plt.show()
+
+    paths = bpmnGraph.get_all_paths()
+    print("All Paths:")
+    for path in paths:
+        print(" -> ".join(node.id for node in path))
+    bpmnGraph.visualize_all_paths()
