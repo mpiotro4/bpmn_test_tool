@@ -27,8 +27,8 @@ class BpmnGraph:
         self.user_tasks = self.root.findall(BpmnGraph.USER_TASK, self.namespace)
         self.exclusive_gateways = self.root.findall(BpmnGraph.EXCLUSIVE_GATEWAY, self.namespace)
         self.service_tasks = self.root.findall(BpmnGraph.SERVICE_TASK, self.namespace)
-        self.end_events = self.root.findall(BpmnGraph.END_EVENT, self.namespace)
-        self.start_events = self.root.findall(BpmnGraph.START_EVENT, self.namespace)
+        self.end_event = self.root.findall(BpmnGraph.END_EVENT, self.namespace)
+        self.start_event = self.root.findall(BpmnGraph.START_EVENT, self.namespace)
         self.G = nx.Graph()
         self._create_all_nodes()
         self._create_all_edges()
@@ -71,11 +71,22 @@ class BpmnGraph:
         function(self.user_tasks)
         function(self.exclusive_gateways)
         function(self.service_tasks)
-        function(self.end_events)
-        function(self.start_events)
+        function(self.end_event)
+        function(self.start_event)
 
     def _get_node_by_id(self, target_id):
         for node in self.nodes:
             if node.id == target_id:
                 return node
         return None
+
+    def __del__(self):
+        # Clear the data structures when the object is deleted
+        self.sequence_flows.clear()
+        self.user_tasks.clear()
+        self.exclusive_gateways.clear()
+        self.service_tasks.clear()
+        self.end_event.clear()
+        self.start_event.clear()
+        self.G.clear()
+        self.nodes.clear()
