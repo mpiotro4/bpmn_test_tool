@@ -17,6 +17,8 @@ if __name__ == "__main__":
     bpmnGraph.print_all_sequence_flows()
 
     paths = bpmnGraph.get_all_paths()
+    FeatureGenerator.generate_feature("result.feature", paths)
+
     print("All Paths:")
     for path in paths:
         print(" -> ".join(node.name for node in path))
