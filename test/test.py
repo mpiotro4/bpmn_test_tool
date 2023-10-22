@@ -1,7 +1,7 @@
 import unittest
 import os
 from BpmnGraph import BpmnGraph
-
+from BpmnConstants import BpmnConstants as BC
 
 class TestBpmnGraph(unittest.TestCase):
 
@@ -24,8 +24,8 @@ class TestBpmnGraph(unittest.TestCase):
         graph = self.bpmn_graph.G
         sequence_flows = self.bpmn_graph.sequence_flows
         for flow in sequence_flows:
-            source_node = self.bpmn_graph._get_node_by_id(flow.get(self.bpmn_graph.SOURCE_NODE))
-            target_node = self.bpmn_graph._get_node_by_id(flow.get(self.bpmn_graph.TARGET_NODE))
+            source_node = self.bpmn_graph._get_node_by_id(flow.get(BC.SOURCE_NODE))
+            target_node = self.bpmn_graph._get_node_by_id(flow.get(BC.TARGET_NODE))
             self.assertTrue(graph.has_edge(source_node, target_node))
 
     def test_node_lookup(self):
