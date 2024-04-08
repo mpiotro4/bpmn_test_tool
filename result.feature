@@ -1,18 +1,16 @@
 Scenario: scenario 0
-Given Then Lafayette want to be involved in a revolution
-When Prepare for departure
-Then Where are you going? country = ? 
-When Get a taxi country = France 
-Then Arrive
-When Overthrow the monarchy
-Then Lafayette has helped a revolution
+Given Then User wants to create a new task
+When Create new task
+Then Priority of the task priority = ? 
+When Assign to high priority queue priority = high 
+Then Priority assigned
+When task created
 
 Scenario: scenario 1
-Given Then Lafayette want to be involved in a revolution
-When Prepare for departure
-Then Where are you going? country = ? 
-When Book a place on a ship country = America 
-Then Arrive
-When Overthrow the monarchy
-Then Lafayette has helped a revolution
+Given Then User wants to create a new task
+When Create new task
+Then Priority of the task priority = ? 
+When Assign to low priority queue priority = low 
+Then Priority assigned
+When task created
 

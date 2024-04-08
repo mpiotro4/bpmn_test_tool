@@ -8,3 +8,4 @@ class BpmnConstants:
     TARGET_NODE = 'targetRef'
     SOURCE_NODE = 'sourceRef'
     CONDITION_EXPRESSION = './/bpmn:conditionExpression'
+    PROCESS = './/bpmn:process'

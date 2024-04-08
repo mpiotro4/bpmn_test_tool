@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 
 from BpmnConstants import BpmnConstants as BC
 from BpmnNode import BpmnNode
+from BpmnNodeFactory import BpmnNodeFactory
 from BpmnVisualizer import BpmnVisualizer
 
 
@@ -27,6 +28,7 @@ class BpmnGraph:
         self.G = nx.Graph()
         self._create_all_nodes()
         self._create_all_edges()
+        self.process_id = self.root.find(BC.PROCESS, self.namespace).get("id")
 
     def get_all_paths(self):
         start_node = self._get_start_node()
@@ -50,10 +52,10 @@ class BpmnGraph:
     def print_all_sequence_flows(self):
         for flow in self.sequence_flows:
             print(f"Source: {flow.get('sourceRef')}, Target: {flow.get('targetRef')}")
-            # condition_expression = flow.find(self.CONDITION_EXPRESSION, self.namespace)
-            # if condition_expression is not None:
-            #     condition_text = condition_expression.text
-            #     print(condition_text)
+            condition_expression = flow.find(BC.CONDITION_EXPRESSION, self.namespace)
+            if condition_expression is not None:
+                condition_text = condition_expression.text
+                print(condition_text)
 
     def print_all_nodes(self):
         for node in self.G.nodes:
@@ -82,13 +84,53 @@ class BpmnGraph:
             self.G.add_edge(source_node, target_node)
 
     def _create_all_nodes(self):
-        self._for_all_nodes(function=self._create_nodes)
+        self._create_start_event_nodes(self.start_event)
+        self._create_exclusive_gateways_nodes(self.exclusive_gateways)
+        self._create_service_tasks_nodes(self.service_tasks)
+        self._create_end_event_nodes(self.end_event)
+        self._create_user_task_nodes(self.user_tasks)
         for node in self.nodes:
             self.G.add_node(node)
 
-    def _create_nodes(self, nodes):
+    def _create_start_event_nodes(self, nodes):
         for node in nodes:
-            self.nodes.append(BpmnNode(node_id=node.get('id'), name=node.get('name')))
+            self.nodes.append(BpmnNodeFactory.create_node(
+                node_id=node.get('id'),
+                name=node.get('name'),
+                node_type=BC.START_EVENT)
+            )
+
+    def _create_user_task_nodes(self, nodes):
+        for node in nodes:
+            self.nodes.append(BpmnNodeFactory.create_node(
+                node_id=node.get('id'),
+                name=node.get('name'),
+                node_type=BC.USER_TASK)
+            )
+
+    def _create_exclusive_gateways_nodes(self, nodes):
+        for node in nodes:
+            self.nodes.append(BpmnNodeFactory.create_node(
+                node_id=node.get('id'),
+                name=node.get('name'),
+                node_type=BC.EXCLUSIVE_GATEWAY)
+            )
+
+    def _create_service_tasks_nodes(self, nodes):
+        for node in nodes:
+            self.nodes.append(BpmnNodeFactory.create_node(
+                node_id=node.get('id'),
+                name=node.get('name'),
+                node_type=BC.SERVICE_TASK)
+            )
+
+    def _create_end_event_nodes(self, nodes):
+        for node in nodes:
+            self.nodes.append(BpmnNodeFactory.create_node(
+                node_id=node.get('id'),
+                name=node.get('name'),
+                node_type=BC.END_EVENT)
+            )
 
     def _print_nodes(self, nodes):
         for node in nodes:

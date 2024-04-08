@@ -21,6 +21,9 @@ class BpmnNode:
     def decision_var_val(self, value):
         self._decision_var_val = value
 
+    def generate_step(self):
+        return "XD"
+
     def __str__(self):
         parts = [f"id: {self.id}", f"name: {self.name}"]
 
