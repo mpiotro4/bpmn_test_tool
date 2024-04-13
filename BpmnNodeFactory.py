@@ -24,7 +24,7 @@ class UserTask(BpmnNode):
         super().__init__(node_id, name)
 
     def generate_step(self):
-        return "user task"
+        return f"""assertThat(instance).isWaitingAt("{self.id}");"""
 
 
 class ExclusiveGateway(BpmnNode):
@@ -32,7 +32,8 @@ class ExclusiveGateway(BpmnNode):
         super().__init__(node_id, name)
 
     def generate_step(self):
-        return "exclusive gateway"
+        return ""
+        # return f"""assertThat(instance).hasPassed("{self.id}");"""
 
 
 class ServiceTask(BpmnNode):
@@ -40,7 +41,10 @@ class ServiceTask(BpmnNode):
         super().__init__(node_id, name)
 
     def generate_step(self):
-        return "service task"
+        return f"""Map<String, Object> variables = new HashMap<>();
+    variables.put("{self.decision_var}", "{self.decision_var_val}");
+    complete(task(), variables);"""
+        # return f"""assertThat(instance).hasPassed("{self.id}");"""
 
 
 class EndEvent(BpmnNode):
@@ -48,7 +52,7 @@ class EndEvent(BpmnNode):
         super().__init__(node_id, name)
 
     def generate_step(self):
-        return "end event"
+        return f"""assertThat(instance).hasPassed("{self.id}").isEnded();"""
 
 
 class StartEvent(BpmnNode):
@@ -56,4 +60,4 @@ class StartEvent(BpmnNode):
         super().__init__(node_id, name)
 
     def generate_step(self):
-        return "start event"
+        return "assertThat(instance).isStarted();"

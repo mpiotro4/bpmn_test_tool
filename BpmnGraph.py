@@ -30,6 +30,9 @@ class BpmnGraph:
         self._create_all_edges()
         self.process_id = self.root.find(BC.PROCESS, self.namespace).get("id")
 
+    def get_process_id(self):
+        return self.process_id
+
     def get_all_paths(self):
         start_node = self._get_start_node()
         end_node = self._get_end_node()
