@@ -1,5 +1,5 @@
-from BpmnNode import BpmnNode
-from BpmnConstants import BpmnConstants as BC
+from bpmn.BpmnNode import BpmnNode
+from bpmn.BpmnConstants import BpmnConstants as BC
 
 
 class BpmnNodeFactory:

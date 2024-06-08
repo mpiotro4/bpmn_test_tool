@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import networkx as nx
 
 from GraphVisualizer import GraphVisualizer
-from XmiNode import XmiNode
+from xmi.XmiNode import XmiNode
 import matplotlib.pyplot as plt
 
 
@@ -35,10 +35,3 @@ class XmiGraph:
     def _create_all_edges(self):
         for i in range(len(self.nodes) - 1):
             self.G.add_edge(self.nodes[i], self.nodes[i + 1])
-
-
-if __name__ == "__main__":
-    file_path = 'bankomat.xml'
-    xmi_graph = XmiGraph(file_path)
-    node_labels = {node: node.name for node in xmi_graph.get_graph().nodes()}
-    GraphVisualizer.visualize_graph(xmi_graph.get_graph(), node_labels)

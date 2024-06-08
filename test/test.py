@@ -1,7 +1,6 @@
 import unittest
-import os
-from BpmnGraph import BpmnGraph
-from BpmnConstants import BpmnConstants as BC
+from bpmn.BpmnGraph import BpmnGraph
+from bpmn.BpmnConstants import BpmnConstants as BC
 
 class TestBpmnGraph(unittest.TestCase):
 

@@ -3,9 +3,9 @@ import re
 import networkx as nx
 from matplotlib import pyplot as plt
 
-from BpmnConstants import BpmnConstants as BC
-from BpmnNode import BpmnNode
-from BpmnNodeFactory import BpmnNodeFactory
+from bpmn.BpmnConstants import BpmnConstants as BC
+from bpmn.BpmnNode import BpmnNode
+from bpmn.BpmnNodeFactory import BpmnNodeFactory
 from GraphVisualizer import GraphVisualizer
 
 
