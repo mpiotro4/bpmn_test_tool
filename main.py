@@ -5,7 +5,7 @@ from FeatureGenerator import FeatureGenerator
 from BpmnGraph import BpmnGraph
 
 if __name__ == "__main__":
-    # bpmnGraph = BpmnGraph("process_graph.bpmn")
+    # bpmnGraph = BpmnGraph("task_process.bpmn")
     bpmnGraph = BpmnGraph("diagram_1.bpmn")
     graph = bpmnGraph.get_graph()
     node_labels = {node: node.name for node in graph.nodes()}
@@ -17,6 +17,8 @@ if __name__ == "__main__":
     # bpmnGraph.print_all_nodes()
     # bpmnGraph.print_all_edges()
     # bpmnGraph.print_all_sequence_flows()
+
+
 
     paths = bpmnGraph.get_all_paths()
     FeatureGenerator.generate_feature("result.feature", paths)

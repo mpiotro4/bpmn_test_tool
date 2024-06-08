@@ -1,0 +1,49 @@
+<EAModel.scenario>
+    <EAScenario name="Sciezka: Autoryzacja" type="Basic Path" weight="0.00"
+                subject="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:id="EAID_F145E24D_6175_4caf_AB36_46CBD047263C">
+        <EAScenarioContent>
+            <path>
+                <step name="Klient wk&#x142;ada karte bankowa do bankomatu."
+                      guid="{7F8A15FC-AC72-4a00-B536-58AD08B08B11}" level="1" uses="" useslist="" result="" state=""
+                      trigger="1" link=""/>
+                <step name="System prosi o wprowadzenie kodu PIN." guid="{EBC3CA5C-B083-4772-A438-59F51616EBB1}"
+                      level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+                <step name="Klient wprowadza kod PIN." guid="{73DEA0CB-AE1D-4e1c-BDFC-503964ACE22D}" level="3" uses=""
+                      useslist="" result="" state="" trigger="1" link=""/>
+                <step name="System wysy&#x142;a kod PIN do banku w celu weryfikacji."
+                      guid="{13DD0EFF-B20A-473d-9695-30D21D81C070}" level="4" uses="" useslist="" result="" state=""
+                      trigger="0" link=""/>
+                <step name="Bank weryfikuje poprawnosc PIN" guid="{DCF667FA-20E3-4f9a-BE67-623555EDC097}" level="5"
+                      uses="" useslist="" result="" state="" trigger="1" link=""/>
+                <step name="System wyswietla menu glowne bankomatu" guid="{487D7CC5-5E0E-4e56-9937-50FB390B210A}"
+                      level="6" uses="" useslist="" result="" state="" trigger="0" link="">
+                    <extension level="6a" guid="{17DFFA07-16A8-4cc5-94E2-86899D3788F3}" join="End"/>
+                </step>
+                <context>
+                    <item oldname="Sprawdzenie salda" guid="{8094C57A-4F2E-4b72-AE89-34173E2F567D}"/>
+                    <item oldname="Klient" guid="{B538F262-3AE8-4115-9CBC-42347F3323A0}"/>
+                    <item oldname="Wyplata" guid="{CCBC4D42-AEF2-4e77-86E0-A9BAA0902407}"/>
+                    <item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+                    <item oldname="Wplata" guid="{635DEBAD-8EA1-40a9-9B7D-34B0CA34289F}"/>
+                </context>
+            </path>
+        </EAScenarioContent>
+    </EAScenario>
+    <EAScenario name="Sciezka: Zly PIN" type="Exception" weight="1.00"
+                subject="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:id="EAID_17DFFA07_16A8_4cc5_94E2_86899D3788F3">
+        <EAScenarioContent>
+            <path>
+                <step name="System wyswietla informacje o zlym PIN i oddaje karte"
+                      guid="{86E3A4E9-C46F-4e9b-8231-0861E1281579}" level="1" uses="" useslist="" result="" state=""
+                      trigger="0" link=""/>
+                <context>
+                    <item oldname="Sprawdzenie salda" guid="{8094C57A-4F2E-4b72-AE89-34173E2F567D}"/>
+                    <item oldname="Klient" guid="{B538F262-3AE8-4115-9CBC-42347F3323A0}"/>
+                    <item oldname="Wyplata" guid="{CCBC4D42-AEF2-4e77-86E0-A9BAA0902407}"/>
+                    <item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+                    <item oldname="Wplata" guid="{635DEBAD-8EA1-40a9-9B7D-34B0CA34289F}"/>
+                </context>
+            </path>
+        </EAScenarioContent>
+    </EAScenario>
+</EAModel.scenario>

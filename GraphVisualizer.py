@@ -2,7 +2,13 @@ import networkx as nx
 from matplotlib import pyplot as plt
 
 
-class BpmnVisualizer:
+class GraphVisualizer:
+    @staticmethod
+    def visualize_graph(graph, node_labels):
+        pos = nx.spring_layout(graph)
+        nx.draw(graph, pos, labels=node_labels, node_size=1000, node_color="skyblue", font_size=10, font_color="black")
+        plt.show()
+
     @staticmethod
     def visualize_paths(graph, paths):
         if not paths:

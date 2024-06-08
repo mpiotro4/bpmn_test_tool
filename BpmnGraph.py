@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 from BpmnConstants import BpmnConstants as BC
 from BpmnNode import BpmnNode
 from BpmnNodeFactory import BpmnNodeFactory
-from BpmnVisualizer import BpmnVisualizer
+from GraphVisualizer import GraphVisualizer
 
 
 class BpmnGraph:
@@ -41,7 +41,7 @@ class BpmnGraph:
 
     def visualize_all_paths(self):
         all_paths = self.get_all_paths()
-        BpmnVisualizer.visualize_paths(self.G, all_paths)
+        GraphVisualizer.visualize_paths(self.G, all_paths)
 
     def _get_start_node(self):
         return self._get_node_by_id(self.start_event[0].get('id'))

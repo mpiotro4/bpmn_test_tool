@@ -1,0 +1,761 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1627"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" name="Bankomat" visibility="public">
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_0F83D68D_C67B_4777_AAED_0B053CB9F213" name="Bankomat" visibility="public"/>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_3E798204_91C3_46c1_ADA6_5BBDA7443ABE" name="Actors" visibility="public">
+				<packagedElement xmi:type="uml:Actor" xmi:id="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0" name="Klient" visibility="public"/>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" visibility="public">
+					<memberEnd xmi:idref="EAID_dst2C65E2_429B_4797_A8DF_F79E046DFF23"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst2C65E2_429B_4797_A8DF_F79E046DFF23" visibility="public" association="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A"/>
+					</ownedEnd>
+					<memberEnd xmi:idref="EAID_src2C65E2_429B_4797_A8DF_F79E046DFF23"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src2C65E2_429B_4797_A8DF_F79E046DFF23" visibility="public" association="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Actor" xmi:id="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" name="Bank" visibility="public"/>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_0786516D_EBB0_4eba_87CE_34EB9A431A63" visibility="public">
+					<memberEnd xmi:idref="EAID_dst86516D_EBB0_4eba_87CE_34EB9A431A63"/>
+					<memberEnd xmi:idref="EAID_src86516D_EBB0_4eba_87CE_34EB9A431A63"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src86516D_EBB0_4eba_87CE_34EB9A431A63" visibility="public" association="EAID_0786516D_EBB0_4eba_87CE_34EB9A431A63" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst86516D_EBB0_4eba_87CE_34EB9A431A63" visibility="public" association="EAID_0786516D_EBB0_4eba_87CE_34EB9A431A63" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_2FC36633_7917_4072_9191_163D9C1FA58A" visibility="public">
+					<memberEnd xmi:idref="EAID_dstC36633_7917_4072_9191_163D9C1FA58A"/>
+					<memberEnd xmi:idref="EAID_srcC36633_7917_4072_9191_163D9C1FA58A"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcC36633_7917_4072_9191_163D9C1FA58A" visibility="public" association="EAID_2FC36633_7917_4072_9191_163D9C1FA58A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstC36633_7917_4072_9191_163D9C1FA58A" visibility="public" association="EAID_2FC36633_7917_4072_9191_163D9C1FA58A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_AE42DE49_6BF2_487a_8D54_251EA38FAC84" visibility="public">
+					<memberEnd xmi:idref="EAID_dst42DE49_6BF2_487a_8D54_251EA38FAC84"/>
+					<memberEnd xmi:idref="EAID_src42DE49_6BF2_487a_8D54_251EA38FAC84"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src42DE49_6BF2_487a_8D54_251EA38FAC84" visibility="public" association="EAID_AE42DE49_6BF2_487a_8D54_251EA38FAC84" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst42DE49_6BF2_487a_8D54_251EA38FAC84" visibility="public" association="EAID_AE42DE49_6BF2_487a_8D54_251EA38FAC84" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_F0254A19_1C6B_4a09_98D8_5007DCE83D30" visibility="public">
+					<memberEnd xmi:idref="EAID_dst254A19_1C6B_4a09_98D8_5007DCE83D30"/>
+					<memberEnd xmi:idref="EAID_src254A19_1C6B_4a09_98D8_5007DCE83D30"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src254A19_1C6B_4a09_98D8_5007DCE83D30" visibility="public" association="EAID_F0254A19_1C6B_4a09_98D8_5007DCE83D30" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst254A19_1C6B_4a09_98D8_5007DCE83D30" visibility="public" association="EAID_F0254A19_1C6B_4a09_98D8_5007DCE83D30" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" name="Use Cases" visibility="public">
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" name="Autoryzacja uzytkownika" visibility="public">
+					<include xmi:type="uml:Include" xmi:id="EAID_31D21052_7C49_4326_AA68_29910B8B00EF" visibility="public" addition="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F"/>
+					<include xmi:type="uml:Include" xmi:id="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852" visibility="public" addition="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407"/>
+					<include xmi:type="uml:Include" xmi:id="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E" visibility="public" addition="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" name="Sprawdzenie salda" visibility="public"/>
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" name="Wplata" visibility="public"/>
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" name="Wyplata" visibility="public"/>
+			</packagedElement>
+		</packagedElement>
+		<thecustomprofile:include base_Include="EAID_31D21052_7C49_4326_AA68_29910B8B00EF"/>
+		<thecustomprofile:include base_Include="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852"/>
+		<thecustomprofile:include base_Include="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" xmi:type="uml:Package" name="Bankomat" scope="public">
+				<model package2="EAID_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" package="EAPK_E1B400BA_49B9_49f8_88C7_FAC5053DD3FF" tpos="1" ea_localid="22" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-01 13:49:20" modified="2024-06-01 13:49:30" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Model"/>
+				<packageproperties version="1.0" tpos="1"/>
+				<paths/>
+				<times created="2024-06-01 13:49:20" modified="2024-06-01 13:49:30" lastloaddate="2016-07-21 08:07:37" lastsavedate="2016-07-21 08:07:37"/>
+				<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"/>
+			</element>
+			<element xmi:idref="EAID_0F83D68D_C67B_4777_AAED_0B053CB9F213" xmi:type="uml:Boundary" name="Bankomat" scope="public">
+				<model package="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" tpos="0" ea_localid="73" ea_eleType="element"/>
+				<properties documentation="[Description of the System]" isSpecification="false" sType="Boundary" nType="0" scope="public"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-01 13:49:20" modified="2024-06-01 13:49:37" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Bankomat"/>
+			</element>
+			<element xmi:idref="EAPK_3E798204_91C3_46c1_ADA6_5BBDA7443ABE" xmi:type="uml:Package" name="Actors" scope="public">
+				<model package2="EAID_3E798204_91C3_46c1_ADA6_5BBDA7443ABE" package="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" tpos="0" ea_localid="23" ea_eleType="package"/>
+				<properties documentation="Contains Actors that represent the roles that users play with respect to the system." isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-01 13:49:20" modified="2024-06-01 13:49:20" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Bankomat"/>
+				<packageproperties version="1.0" tpos="0"/>
+				<paths/>
+				<times created="2024-06-01 13:49:20" modified="2017-08-01 09:43:42" lastloaddate="2016-07-21 08:07:37" lastsavedate="2016-07-21 08:07:37"/>
+				<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"/>
+			</element>
+			<element xmi:idref="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0" xmi:type="uml:Actor" name="Klient" scope="public">
+				<model package="EAPK_3E798204_91C3_46c1_ADA6_5BBDA7443ABE" tpos="1" ea_localid="77" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Actor" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-01 13:49:20" modified="2024-06-07 18:25:08" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;" object_style="MDoc=1;"/>
+				<modelDocument xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64" type="ModelDocument" docid="{172C9B4B-A608-40bb-97E7-6B488524B5B1}" name="Klient" date="07-Jun-2024 6:25:08 PM" notes="" style="" elementtype="ModelDocument" strcontent="" author="" version="" isactive="2161" sequence="0">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
+AA==
+</modelDocument>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Actors"/>
+				<links>
+					<Association xmi:id="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" start="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0" end="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" xmi:type="uml:Actor" name="Bank" scope="public">
+				<model package="EAPK_3E798204_91C3_46c1_ADA6_5BBDA7443ABE" tpos="2" ea_localid="76" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Actor" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-01 13:49:20" modified="2024-06-07 18:23:51" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;" object_style="MDoc=1;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Actors"/>
+				<EAModel.scenario>
+					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" xmi:id="EAID_1718F875_F5A8_4fae_B57D_7B3F76E345A3">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wk&#x142;ada kart&#x119; bankow&#x105; do bankomatu." guid="{0381328F-4094-4c35-8D53-C70FA3B5A1C4}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System prosi o wprowadzenie kodu PIN." guid="{6D151537-199B-4f77-83E0-2B42DEE831B6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wprowadza kod PIN." guid="{4AA033C9-3CBE-4c68-89DB-00D551550D25}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System weryfikuje poprawno&#x15B;&#x107; kodu PIN." guid="{9C6A82FE-A91F-4a04-98EB-AC3EC219DAD8}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System wy&#x15B;wietla menu g&#x142;ówne z opcjami transakcji." guid="{525D10F7-3758-4fcf-B0B6-5DB6B6E59565}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+									<extension level="5a" guid="{AF1BB304-BAE9-46ea-BF46-CD8F7AA3C772}" join="End"/>
+								</step>
+								<context>
+									<item oldname="Use Case B" guid="{0189CAC2-D60B-4e60-8CF7-EC4B313FC433}"/>
+									<item oldname="Wyp&#x142;ata" guid="{031BFF35-9AA4-4baf-A32D-04F6EAB55763}"/>
+									<item oldname="Przyjmij gotówk&#x119;" guid="{1284E195-96F4-4604-8B1B-0CD4E2DE7BF5}"/>
+									<item oldname="Wydaj gótówk&#x119;" guid="{50EC3FE5-2541-4bb9-9FDA-3E38D3A50FF7}"/>
+									<item oldname="Autoryzacja u&#x17C;ytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+									<item oldname="Sprawd&#x17A; PIN" guid="{A41CC24F-7E82-45ec-9D05-CD3A0F70A182}"/>
+									<item oldname="Sprawd&#x17A; PIN" guid="{C1CFA6B2-0A81-4bde-BC42-1F7042C23DB9}"/>
+									<item oldname="Rozpocznij sesje" guid="{CD11020C-8461-49c2-A9BB-69D285AFFE1E}"/>
+									<item oldname="Sprawdzenie salda" guid="{FD2AF627-14DC-4068-BA72-738603F99B78}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+					<EAScenario name="Z&#x142;y PIN" type="Exception" weight="1.00" subject="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" xmi:id="EAID_AF1BB304_BAE9_46ea_BF46_CD8F7AA3C772">
+						<EAScenarioContent>
+							<path>
+								<step name="System wy&#x15B;wietla informacje o z&#x142;ym PIN i oddaje kart&#x119;" guid="{B753601D-EADB-4d6e-AC71-13D9A265A674}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Use Case B" guid="{0189CAC2-D60B-4e60-8CF7-EC4B313FC433}"/>
+									<item oldname="Wyp&#x142;ata" guid="{031BFF35-9AA4-4baf-A32D-04F6EAB55763}"/>
+									<item oldname="Przyjmij gotówk&#x119;" guid="{1284E195-96F4-4604-8B1B-0CD4E2DE7BF5}"/>
+									<item oldname="Wydaj gótówk&#x119;" guid="{50EC3FE5-2541-4bb9-9FDA-3E38D3A50FF7}"/>
+									<item oldname="Autoryzacja u&#x17C;ytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+									<item oldname="Sprawd&#x17A; PIN" guid="{A41CC24F-7E82-45ec-9D05-CD3A0F70A182}"/>
+									<item oldname="Sprawd&#x17A; PIN" guid="{C1CFA6B2-0A81-4bde-BC42-1F7042C23DB9}"/>
+									<item oldname="Rozpocznij sesje" guid="{CD11020C-8461-49c2-A9BB-69D285AFFE1E}"/>
+									<item oldname="Sprawdzenie salda" guid="{FD2AF627-14DC-4068-BA72-738603F99B78}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_0786516D_EBB0_4eba_87CE_34EB9A431A63" start="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					<Association xmi:id="EAID_2FC36633_7917_4072_9191_163D9C1FA58A" start="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					<Association xmi:id="EAID_AE42DE49_6BF2_487a_8D54_251EA38FAC84" start="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					<Association xmi:id="EAID_F0254A19_1C6B_4a09_98D8_5007DCE83D30" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+				</links>
+			</element>
+			<element xmi:idref="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" xmi:type="uml:Package" name="Use Cases" scope="public">
+				<model package2="EAID_17C4FCB2_80FE_489c_891A_55B1E6312FA1" package="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" tpos="0" ea_localid="24" ea_eleType="package"/>
+				<properties documentation="Contains Use Case that represent the value or goal that the Actors wish to achieve." isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-01 13:49:20" modified="2024-06-01 13:49:20" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Bankomat"/>
+				<packageproperties version="1.0" tpos="0"/>
+				<paths/>
+				<times created="2024-06-01 13:49:20" modified="2017-08-01 09:43:38" lastloaddate="2016-07-21 08:07:37" lastsavedate="2016-07-21 08:07:37"/>
+				<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"/>
+			</element>
+			<element xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:type="uml:UseCase" name="Autoryzacja uzytkownika" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="928" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:07:11" modified="2024-06-07 20:45:20" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Sciezka: Autoryzacja" type="Basic Path" weight="0.00" subject="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:id="EAID_F145E24D_6175_4caf_AB36_46CBD047263C">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wk&#x142;ada karte bankowa do bankomatu." guid="{7F8A15FC-AC72-4a00-B536-58AD08B08B11}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System prosi o wprowadzenie kodu PIN." guid="{EBC3CA5C-B083-4772-A438-59F51616EBB1}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wprowadza kod PIN." guid="{73DEA0CB-AE1D-4e1c-BDFC-503964ACE22D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System wysy&#x142;a kod PIN do banku w celu weryfikacji." guid="{13DD0EFF-B20A-473d-9695-30D21D81C070}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bank weryfikuje poprawnosc PIN" guid="{DCF667FA-20E3-4f9a-BE67-623555EDC097}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System wyswietla menu glowne bankomatu" guid="{487D7CC5-5E0E-4e56-9937-50FB390B210A}" level="6" uses="" useslist="" result="" state="" trigger="0" link="">
+									<extension level="6a" guid="{17DFFA07-16A8-4cc5-94E2-86899D3788F3}" join="End"/>
+								</step>
+								<context>
+									<item oldname="Sprawdzenie salda" guid="{8094C57A-4F2E-4b72-AE89-34173E2F567D}"/>
+									<item oldname="Klient" guid="{B538F262-3AE8-4115-9CBC-42347F3323A0}"/>
+									<item oldname="Wyplata" guid="{CCBC4D42-AEF2-4e77-86E0-A9BAA0902407}"/>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Wplata" guid="{635DEBAD-8EA1-40a9-9B7D-34B0CA34289F}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+					<EAScenario name="Sciezka: Zly PIN" type="Exception" weight="1.00" subject="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:id="EAID_17DFFA07_16A8_4cc5_94E2_86899D3788F3">
+						<EAScenarioContent>
+							<path>
+								<step name="System wyswietla informacje o zlym PIN i oddaje karte" guid="{86E3A4E9-C46F-4e9b-8231-0861E1281579}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Sprawdzenie salda" guid="{8094C57A-4F2E-4b72-AE89-34173E2F567D}"/>
+									<item oldname="Klient" guid="{B538F262-3AE8-4115-9CBC-42347F3323A0}"/>
+									<item oldname="Wyplata" guid="{CCBC4D42-AEF2-4e77-86E0-A9BAA0902407}"/>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Wplata" guid="{635DEBAD-8EA1-40a9-9B7D-34B0CA34289F}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<UseCase xmi:id="EAID_31D21052_7C49_4326_AA68_29910B8B00EF" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F"/>
+					<UseCase xmi:id="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407"/>
+					<Association xmi:id="EAID_F0254A19_1C6B_4a09_98D8_5007DCE83D30" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					<UseCase xmi:id="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D"/>
+					<Association xmi:id="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" start="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0" end="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" xmi:type="uml:UseCase" name="Sprawdzenie salda" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="952" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:21:43" modified="2024-06-07 20:53:14" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Sciezka: sprawdzenie salda" type="Basic Path" weight="0.00" subject="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" xmi:id="EAID_0229A9F1_AF36_4be0_9280_860BADF35892">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wybiera opcje &quot;Sprawdzenie salda&quot; z menu glownego." guid="{8FBFD8DA-9C8E-4388-8ED3-DA5CDA6DD91C}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) wysy&#x142;a zadanie sprawdzenia salda do banku." guid="{00B31B42-4863-4757-9602-8FA64A2B8C96}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bank przetwarza zadanie i pobiera aktualne saldo " guid="{96EE5B8B-8D96-4622-8EFC-291D0C275A99}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bank zwraca saldo konta do systemu (bankomatu)." guid="{EDDAE607-E243-4009-8D59-A1F9914F70B0}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) wywietla saldo konta" guid="{A72929AD-99E8-4223-B74A-ACE3BB4D77DF}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomat) zwraca karte bankoa" guid="{5C4BE3FB-63C1-431a-80B1-6FE7B8B4BAA5}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera karte bankowa i konczy transakcje." guid="{32B26F61-A8E5-4e0b-A850-C1B090B8FB0A}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_AE42DE49_6BF2_487a_8D54_251EA38FAC84" start="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					<UseCase xmi:id="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" xmi:type="uml:UseCase" name="Wplata" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="950" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:21:21" modified="2024-06-07 20:48:19" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Sciezka: wplata" type="Basic Path" weight="0.00" subject="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" xmi:id="EAID_522EEADA_FA82_486f_8425_99B23410359F">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wybiera opcje &quot;Wplata gotowki&quot; z menu g&#x142;ownego." guid="{26FA8BBD-90E9-48e0-B50C-CB1ED770C011}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) prosi o w&#x142;ozenie gotowki do odpowiedniego otworu." guid="{E6B68985-182E-4331-9B7A-F69D407961C9}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wklada gotówke do otworu." guid="{3FC1CEB3-BAEC-4b46-BFDA-3DF6CB55E908}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) wysy&#x142;a informacje o wplacie do banku." guid="{67FA30C4-08D0-45d0-B7CA-A5B52ED98426}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bank aktualizuje saldo konta o wplcona kwote." guid="{2F5C1F68-226F-4b5c-A793-86C064412F66}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bank zwraca potwierdzenie transakcji do systemu (bankomatu)." guid="{76CF046A-94CF-495a-A745-C3B21114435A}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) drukuje potwierdzenie transakcji." guid="{00EA73F9-DD19-4296-B568-0B42AC5333E5}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomat) zwraca kart&#x119; bankowa." guid="{649BCD61-B495-49bf-AFE4-B3619E57F18C}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera karte bankowa i potwierdzenie, konczac transakcje." guid="{FD36D1D3-026F-44d0-9A69-68B7708CFD11}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_2FC36633_7917_4072_9191_163D9C1FA58A" start="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					<UseCase xmi:id="EAID_31D21052_7C49_4326_AA68_29910B8B00EF" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:type="uml:UseCase" name="Wyplata" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="951" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:21:32" modified="2024-06-07 20:51:44" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Sciezka: brak srodkow" type="Alternate" weight="1.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_0EC49FA8_8B20_447e_8041_724287B50531">
+						<EAScenarioContent>
+							<path>
+								<step name="Bank zwraca informacje o niewystarczajacych srodkach na koncie." guid="{D65F8B82-5265-4e79-8E24-5FFE85E2ED06}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomat) wywietla komunikat o niewystarczajacych srodkach." guid="{4912DD0B-AA80-430d-BFC1-9B4E2955F6A2}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+					<EAScenario name="Sciezka: wyplata" type="Basic Path" weight="0.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_DCACEE6C_3C72_4646_93D8_EC57DE25B0FA">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wybiera opcje &quot;Wyplata gotówki&quot; z menu g&#x142;ownego." guid="{3CD20B28-0D07-4bda-92D4-FF679A5E0A25}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) prosi o wprowadzenie kwoty do wyplaty." guid="{DB121B63-281A-43b2-8DB3-C5607BD3DCDB}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wprowadza kwote." guid="{EA5E8D4C-BEB0-4ca4-A819-4D7920CDA15D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) wysy&#x142;a zadanie wyplaty do banku." guid="{E194E394-90DB-4ba0-99E7-22BF9FB56FFD}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bank sprawdza dost&#x119;pnosc srodkow na koncie." guid="{FEEBCEBF-FD15-4014-98DB-66D0608B06F0}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bank potwierdza dostepnosc srodkow i przystepuje do realizacji transakcji." guid="{8A681FB8-38F6-4486-8F94-9F8E02382ED7}" level="6" uses="" useslist="" result="" state="" trigger="0" link="">
+									<extension level="6a" guid="{0EC49FA8-8B20-447e-8041-724287B50531}" join="{AD7FFAB4-A0E1-453e-A5C1-8A23B928356A}"/>
+								</step>
+								<step name="Bank aktualizuje saldo konta o wyplacona kwote." guid="{5333CF96-8E8F-4d65-BC5F-8467C18361C9}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bank zwraca potwierdzenie transakcji do systemu (bankomatu)." guid="{0CDF7DAA-572F-418a-A232-367B9945874A}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomatu) drukuje potwierdzenie transakcji." guid="{0C9F153B-6DEF-47c4-A1E6-A865C7FE26FE}" level="9" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera gotówke i potwierdzenie." guid="{70AA3430-3D82-4f86-A8D0-4F8DFB4B249A}" level="10" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) zwraca kart&#x119; bankow&#x105;." guid="{AD7FFAB4-A0E1-453e-A5C1-8A23B928356A}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera karte bankowa i konczy transakcje." guid="{9751A65E-33CD-48e6-B84F-065931ABD461}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_0786516D_EBB0_4eba_87CE_34EB9A431A63" start="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" end="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+					<UseCase xmi:id="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23">
+				<source xmi:idref="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0">
+					<model ea_localid="77" type="Actor" name="Klient"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="591"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_0786516D_EBB0_4eba_87CE_34EB9A431A63">
+				<source xmi:idref="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407">
+					<model ea_localid="951" type="UseCase" name="Wyplata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="603"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_2FC36633_7917_4072_9191_163D9C1FA58A">
+				<source xmi:idref="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F">
+					<model ea_localid="950" type="UseCase" name="Wplata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="604"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_AE42DE49_6BF2_487a_8D54_251EA38FAC84">
+				<source xmi:idref="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D">
+					<model ea_localid="952" type="UseCase" name="Sprawdzenie salda"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="602"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_F0254A19_1C6B_4a09_98D8_5007DCE83D30">
+				<source xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="590"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_31D21052_7C49_4326_AA68_29910B8B00EF">
+				<source xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F">
+					<model ea_localid="950" type="UseCase" name="Wplata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="605"/>
+				<properties ea_type="UseCase" subtype="Includes" stereotype="include" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«include»"/>
+				<extendedProperties conditional="«include»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={8C320993-3FD1-4ce5-A05A-CA84EFD26C8D}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={BB135DCE-0732-4751-BCFB-612891924BCD};@ENDSTEREO;$DES;$CLT={31D21052-7C49-4326-AA68-29910B8B00EF}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852">
+				<source xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407">
+					<model ea_localid="951" type="UseCase" name="Wyplata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="607"/>
+				<properties ea_type="UseCase" subtype="Includes" stereotype="include" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«include»"/>
+				<extendedProperties conditional="«include»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={194BB7A2-1E52-49d8-8147-9CDD247B6559}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={BB135DCE-0732-4751-BCFB-612891924BCD};@ENDSTEREO;$DES;$CLT={AF8CB79A-FC4B-49a8-96CC-EE2803C2D852}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E">
+				<source xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D">
+					<model ea_localid="952" type="UseCase" name="Sprawdzenie salda"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="606"/>
+				<properties ea_type="UseCase" subtype="Includes" stereotype="include" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«include»"/>
+				<extendedProperties conditional="«include»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={76F55AC3-72EC-4a64-875A-0853128F14D9}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={BB135DCE-0732-4751-BCFB-612891924BCD};@ENDSTEREO;$DES;$CLT={F5B402CD-3CCE-4e48-9F34-B755856C501E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="thecustomprofile" nsPrefix="thecustomprofile" name="thecustomprofile" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="thecustomprofile">
+					<body> Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="include" name="include">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="include-base_Include" name="base_Include" association="Include_include">
+						<type href="http://schema.omg.org/spec/UML/2.1/Include"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Include_include" name="A_Include_include" memberEnd="extension_include include-base_Include">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_include" name="extension_include" type="include" isComposite="true" lower="0" upper="1" memberEnd="extension_include include-base_Include"/>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_4B06DF8F_8AC9_4260_B00E_EFA13777E562">
+				<model package="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" localID="5" owner="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8"/>
+				<properties name="Starter Use Case Model" type="Use Case"/>
+				<project author="mpio" version="1.0" created="2024-06-01 13:49:20" modified="2024-06-07 18:46:47"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=0;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AllDockable=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;GZ=D0H0M20S0;SuppressedCompartments=;Theme=:119;SaveTag=417A2AD6;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<persistentstyle value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+				<xrefs/>
+				<elements>
+					<element geometry="Left=368;Top=386;Right=473;Bottom=456;" subject="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" seqno="1" style="DUID=528085EF;"/>
+					<element geometry="Left=390;Top=231;Right=495;Bottom=301;" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" seqno="2" style="DUID=7C1BE11F;"/>
+					<element geometry="Left=360;Top=122;Right=465;Bottom=192;" subject="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" seqno="3" style="DUID=40AFAF6C;"/>
+					<element geometry="Left=106;Top=263;Right=151;Bottom=353;" subject="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0" seqno="4" style="DUID=6F1B5042;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+					<element geometry="Left=218;Top=274;Right=323;Bottom=344;" subject="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" seqno="5" style="DUID=93BB9EA7;"/>
+					<element geometry="Left=621;Top=301;Right=668;Bottom=396;" subject="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" seqno="6" style="ImageID=0;DUID=C15A28C4;"/>
+					<element geometry="Left=194;Top=70;Right=587;Bottom=482;" subject="EAID_0F83D68D_C67B_4777_AAED_0B053CB9F213" seqno="7" style="NSL=0;DUID=E31D1ABC;"/>
+					<element geometry="SX=21;SY=-7;EX=20;EY=-5;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F0254A19_1C6B_4a09_98D8_5007DCE83D30" style="Mode=3;EOID=C15A28C4;SOID=93BB9EA7;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=CX=39:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_31D21052_7C49_4326_AA68_29910B8B00EF" style="Mode=3;EOID=40AFAF6C;SOID=93BB9EA7;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=39:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E" style="Mode=3;EOID=528085EF;SOID=93BB9EA7;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=39:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852" style="Mode=3;EOID=7C1BE11F;SOID=93BB9EA7;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" style="Mode=3;EOID=93BB9EA7;SOID=6F1B5042;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_2FC36633_7917_4072_9191_163D9C1FA58A" style="Mode=3;EOID=C15A28C4;SOID=40AFAF6C;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0786516D_EBB0_4eba_87CE_34EB9A431A63" style="Mode=3;EOID=C15A28C4;SOID=7C1BE11F;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AE42DE49_6BF2_487a_8D54_251EA38FAC84" style="Mode=3;EOID=C15A28C4;SOID=528085EF;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>
