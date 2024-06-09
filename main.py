@@ -10,8 +10,14 @@ from xmi.XmiGraph import XmiGraph
 if __name__ == "__main__":
     file_path = 'source_data/bankomat.xml'
     xmi_graph = XmiGraph(file_path)
-    node_labels = {node: node.name for node in xmi_graph.get_graph().nodes()}
-    GraphVisualizer.visualize_graph(xmi_graph.get_graph(), node_labels)
+    graphs = xmi_graph.get_graphs()
+    for graph in graphs:
+        node_labels = {node: node.name for node in graph.nodes()}
+        GraphVisualizer.visualize_graph(graph, node_labels)
+
+    print("XD")
+    # node_labels = {node: node.name for node in xmi_graph.get_graph().nodes()}
+    # GraphVisualizer.visualize_graph(xmi_graph.get_graph(), node_labels)
 
 
 
