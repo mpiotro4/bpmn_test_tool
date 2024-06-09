@@ -1,11 +1,8 @@
 import xml.etree.ElementTree as ET
 from itertools import chain
-
+from typing import List
 import networkx as nx
-
-from GraphVisualizer import GraphVisualizer
 from xmi.XmiNode import XmiNode
-import matplotlib.pyplot as plt
 from xmi.XmiConstants import XmiConstants as XC
 
 
@@ -17,12 +14,11 @@ class XmiGraph:
         self.root = self.tree.getroot()
         self._create_use_cases(self.root.findall(XC.USE_CASE, XC.XMI_NAMESPACE))
 
-    def get_graphs(self):
+    def get_graphs(self) -> List[nx.DiGraph]:
         return list(chain.from_iterable(use_case_wrapper.get_graphs() for use_case_wrapper in self.use_cases_wrappers))
 
     def _create_use_cases(self, use_cases):
-        for use_case in use_cases:
-            self.use_cases_wrappers.append(UseCaseWrapper(use_case))
+        self.use_cases_wrappers.extend(UseCaseWrapper(use_case) for use_case in use_cases)
 
 
 class UseCaseWrapper:
@@ -31,12 +27,11 @@ class UseCaseWrapper:
         self.scenario_wrappers = []
         self._create_scenarios()
 
-    def get_graphs(self):
+    def get_graphs(self) -> List[nx.DiGraph]:
         return [scenario_wrapper.get_graph() for scenario_wrapper in self.scenario_wrappers]
 
     def _create_scenarios(self):
-        for scenario in self.scenarios:
-            self.scenario_wrappers.append(ScenarioWrapper(scenario))
+        self.scenario_wrappers.extend(ScenarioWrapper(scenario) for scenario in self.scenarios)
 
 
 class ScenarioWrapper:
@@ -47,17 +42,11 @@ class ScenarioWrapper:
         self._create_all_nodes()
         self._create_all_edges()
 
-    def get_graph(self):
+    def get_graph(self) -> nx.DiGraph:
         return self.G
 
-    def _create_steps(self):
-        for step in self.steps:
-            self.nodes.append(XmiNode(step.attrib.get(XC.GUID), step.attrib.get(XC.NAME)))
-
     def _create_all_nodes(self):
-        for step in self.steps:
-            self.nodes.append(XmiNode(step.attrib.get('guid'), step.attrib.get('name')))
+        self.nodes.extend(XmiNode(step.attrib.get(XC.GUID), step.attrib.get(XC.NAME)) for step in self.steps)
 
     def _create_all_edges(self):
-        for i in range(len(self.nodes) - 1):
-            self.G.add_edge(self.nodes[i], self.nodes[i + 1])
+        self.G.add_edges_from(zip(self.nodes, self.nodes[1:]))
