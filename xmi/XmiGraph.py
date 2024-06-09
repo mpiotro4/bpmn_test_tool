@@ -7,7 +7,7 @@ from xmi.XmiConstants import XmiConstants as XC
 
 
 class XmiGraph:
-    def __init__(self, path):
+    def __init__(self, path: str):
         self.path = path
         self.use_cases_wrappers = []
         self.tree = ET.parse(path)
@@ -17,12 +17,12 @@ class XmiGraph:
     def get_graphs(self) -> List[nx.DiGraph]:
         return list(chain.from_iterable(use_case_wrapper.get_graphs() for use_case_wrapper in self.use_cases_wrappers))
 
-    def _create_use_cases(self, use_cases):
+    def _create_use_cases(self, use_cases: List[ET.Element]):
         self.use_cases_wrappers.extend(UseCaseWrapper(use_case) for use_case in use_cases)
 
 
 class UseCaseWrapper:
-    def __init__(self, use_case):
+    def __init__(self, use_case: ET.Element):
         self.scenarios = use_case.findall(XC.SCENARIO, XC.XMI_NAMESPACE)
         self.scenario_wrappers = []
         self._create_scenarios()
@@ -35,7 +35,7 @@ class UseCaseWrapper:
 
 
 class ScenarioWrapper:
-    def __init__(self, scenario):
+    def __init__(self, scenario: ET.Element):
         self.G = nx.DiGraph()
         self.nodes = []
         self.steps = scenario.findall(XC.STEP, XC.XMI_NAMESPACE)
