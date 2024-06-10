@@ -6,6 +6,7 @@ class GraphVisualizer:
     @staticmethod
     def visualize_graph(graph, node_labels):
         pos = nx.spring_layout(graph)
+        # pos = nx.planar_layout(graph)
         nx.draw(graph, pos, labels=node_labels, node_size=500, node_color="skyblue", font_size=10, font_color="black")
         plt.show()
 

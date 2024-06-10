@@ -15,11 +15,23 @@ if __name__ == "__main__":
         node_labels = {node: node.name for node in graph.nodes()}
         GraphVisualizer.visualize_graph(graph, node_labels)
 
-    print("XD")
+    G1 = nx.path_graph(5)  # Graf o 5 wierzchołkach (0, 1, 2, 3, 4)
+    G2 = nx.path_graph(4)  # Graf o 4 wierzchołkach (0, 1, 2, 3)
+
+    offset = len(G1)
+
+    # Przesunięcie numeracji wierzchołków w G2
+    G2 = nx.relabel_nodes(G2, lambda x: x + offset)
+    G = nx.compose(G1, G2)
+    # G.add_edge(2, offset)
+
+    # Dodanie krawędzi łączącej koniec nowego grafu do węzła 3 w G1
+    # G.add_edge(3, offset + len(G2) - 1)
+    pos = nx.spring_layout(G)  # Układ wierzchołków
+    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=500, font_size=16)
+    plt.show()
     # node_labels = {node: node.name for node in xmi_graph.get_graph().nodes()}
     # GraphVisualizer.visualize_graph(xmi_graph.get_graph(), node_labels)
-
-
 
     # bpmnGraph = BpmnGraph("task_process.bpmn")
     # bpmnGraph = BpmnGraph("source_data/diagram_1.bpmn")
