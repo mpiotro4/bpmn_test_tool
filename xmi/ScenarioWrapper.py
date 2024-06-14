@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 import networkx as nx
 
@@ -12,9 +12,9 @@ from xmi.XmiConstants import XmiConstants as XC
 class ScenarioWrapper:
     def __init__(self, scenario: ET.Element):
         self.G = nx.DiGraph()
-        self.nodes = []
-        self.id = transform_id(scenario.attrib.get('{http://schema.omg.org/spec/XMI/2.1}id'))
-        self.extensions_wrappers = []
+        self.nodes: List[XmiNode] = []
+        self.id = transform_id(scenario.attrib.get(XC.SCHEMA_ID))
+        self.extensions_wrappers: List[ExtensionWrapper] = []
         self._create_all_extensions(scenario.findall(XC.EXTENSION, XC.XMI_NAMESPACE))
         self.steps = scenario.findall(XC.STEP, XC.XMI_NAMESPACE)
         self._create_all_nodes()
@@ -27,7 +27,8 @@ class ScenarioWrapper:
         return self.G
 
     def _create_all_nodes(self):
-        self.nodes.extend(XmiNode(step.attrib.get(XC.GUID), step.attrib.get(XC.NAME)) for step in self.steps)
+        self.nodes.extend(XmiNode(step.attrib.get(XC.GUID), step.attrib.get(XC.NAME), step.attrib.get(XC.LEVEL))
+                          for step in self.steps)
         self.G.add_nodes_from(self.nodes)
 
     def _create_all_edges(self):
@@ -38,3 +39,9 @@ class ScenarioWrapper:
 
     def get_extension_wrappers(self) -> List[ExtensionWrapper]:
         return self.extensions_wrappers
+
+    def find_node_by_level(self, level: str) -> Optional[XmiNode]:
+        for node in self.nodes:
+            if node.level == level:
+                return node
+        return None

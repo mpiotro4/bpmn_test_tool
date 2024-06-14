@@ -7,6 +7,8 @@ from xmi.XmiConstants import XmiConstants as XC
 import networkx as nx
 
 from xmi.ScenarioWrapper import ScenarioWrapper
+
+
 class UseCaseWrapper:
     def __init__(self, use_case: ET.Element):
         self.scenarios = use_case.findall(XC.SCENARIO, XC.XMI_NAMESPACE)
@@ -31,6 +33,18 @@ class UseCaseWrapper:
                 source_scenario = self.find_scenario_by_id(extension_wrapper.guid)
                 if source_scenario:
                     merged_graph = nx.compose(source_scenario.get_graph(), scenario_wrapper.get_graph())
+                    print(source_scenario.nodes)
+                    print(scenario_wrapper.nodes)
+                    id_without_letter = ''.join(filter(str.isdigit, extension_wrapper.level))
+                    new_id = int(id_without_letter) - 1
+                    node1 = scenario_wrapper.find_node_by_level(str(new_id))
+                    node2 = source_scenario.nodes[0]
+
+                    print(node1)
+                    print(node2)
+
+                    merged_graph.add_edge(node1, node2)
+
                     scenario_wrapper.set_graph(merged_graph)
                     to_remove.append(source_scenario)
         self.scenario_wrappers = [sw for sw in self.scenario_wrappers if sw not in to_remove]

@@ -7,4 +7,7 @@ class XmiConstants:
     STEP = './/step'
     GUID = 'guid'
     NAME = 'name'
+    LEVEL = 'level'
     EXTENSION = './/extension'
+    JOIN = 'join'
+    SCHEMA_ID = '{http://schema.omg.org/spec/XMI/2.1}id'

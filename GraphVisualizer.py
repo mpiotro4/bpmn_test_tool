@@ -5,9 +5,18 @@ from matplotlib import pyplot as plt
 class GraphVisualizer:
     @staticmethod
     def visualize_graph(graph, node_labels):
+        plt.close('all')
+
+        # Zwiększ rozmiar figury
+        # plt.figure(figsize=(20, 20))
+
+        # Użyj układu sprężynowego z dostosowanymi parametrami
+        # pos = nx.spring_layout(graph, k=0.25, iterations=25)
         pos = nx.spring_layout(graph)
-        # pos = nx.planar_layout(graph)
+        # Rysuj graf
         nx.draw(graph, pos, labels=node_labels, node_size=500, node_color="skyblue", font_size=10, font_color="black")
+
+        # Pokaż wykres
         plt.show()
 
     @staticmethod
