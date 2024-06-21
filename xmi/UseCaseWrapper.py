@@ -26,6 +26,7 @@ class UseCaseWrapper:
         return next(
             (scenario_wrapper for scenario_wrapper in self.scenario_wrappers if scenario_wrapper.id == search_id), None)
 
+    # Todo refactor and joining ends
     def merge_scenarios(self):
         to_remove = []
         for scenario_wrapper in self.scenario_wrappers:
@@ -46,5 +47,7 @@ class UseCaseWrapper:
                     merged_graph.add_edge(node1, node2)
 
                     scenario_wrapper.set_graph(merged_graph)
+                    scenario_wrapper.end_nodes.extend(source_scenario.end_nodes)
+
                     to_remove.append(source_scenario)
         self.scenario_wrappers = [sw for sw in self.scenario_wrappers if sw not in to_remove]

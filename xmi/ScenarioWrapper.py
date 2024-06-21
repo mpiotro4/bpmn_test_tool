@@ -19,6 +19,8 @@ class ScenarioWrapper:
         self.steps = scenario.findall(XC.STEP, XC.XMI_NAMESPACE)
         self._create_all_nodes()
         self._create_all_edges()
+        self.start_node: XmiNode = self.nodes[0]
+        self.end_nodes: List[XmiNode] = [self.nodes[-1]]
 
     def set_graph(self, graph: nx.DiGraph):
         self.G = graph

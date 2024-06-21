@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_0fr9mxs" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0">
+  <bpmn:process id="camunda_task_process" isExecutable="true" camunda:historyTimeToLive="180">
+    <bpmn:startEvent id="create-" name="Klient wkłada karte bankowa do bankomatu.">
+      <bpmn:outgoing>SequenceFlow_1fp17al</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1fp17al" sourceRef="create-" targetRef="create-new-task" />
+    <bpmn:endEvent id="task-created" name="task created">
+      <bpmn:incoming>Flow_0jkhry0</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="create-new-task" name="System prosi o wprowadzenie kodu PIN." camunda:formKey="camunda-forms:/forms/create-task.form" camunda:candidateUsers="demo">
+      <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
+      <bpmn:outgoing>Flow_1j6oysf</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="set-priority" name="Bank weryfikuje poprawnosc PIN">
+      <bpmn:incoming>Flow_0l9j1eu</bpmn:incoming>
+      <bpmn:outgoing>Flow_18ucaha</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0yt6ir5</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="priority-assigned" name="Priority assigned">
+      <bpmn:incoming>Flow_0j8ty6h</bpmn:incoming>
+      <bpmn:incoming>Flow_1rr22tq</bpmn:incoming>
+      <bpmn:outgoing>Flow_0jkhry0</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_18ucaha" sourceRef="set-priority" targetRef="assign-high">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{priority == 'high'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0jkhry0" sourceRef="priority-assigned" targetRef="task-created" />
+    <bpmn:serviceTask id="assign-low" name="System wyswietla menu glowne bankomatu" camunda:delegateExpression="#{assignLowPriority}">
+      <bpmn:incoming>Flow_0yt6ir5</bpmn:incoming>
+      <bpmn:outgoing>Flow_0j8ty6h</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="assign-high" name="System wyswietla informacje o zlym PIN i oddaje karte" camunda:delegateExpression="#{assignHighPriority}">
+      <bpmn:incoming>Flow_18ucaha</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rr22tq</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0yt6ir5" name="low" sourceRef="set-priority" targetRef="assign-low">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">#{priority == 'low'}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0j8ty6h" sourceRef="assign-low" targetRef="priority-assigned" />
+    <bpmn:sequenceFlow id="Flow_1rr22tq" sourceRef="assign-high" targetRef="priority-assigned" />
+    <bpmn:userTask id="Activity_1oenwrm" name="Klient wprowadza kod PIN." camunda:formKey="camunda-forms:/forms/create-task.form" camunda:candidateUsers="demo">
+      <bpmn:incoming>Flow_1j6oysf</bpmn:incoming>
+      <bpmn:outgoing>Flow_1bfknf4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1j6oysf" sourceRef="create-new-task" targetRef="Activity_1oenwrm" />
+    <bpmn:userTask id="Activity_0mj6iqw" name="System wysyła kod PIN do banku w celu weryfikacji." camunda:formKey="camunda-forms:/forms/create-task.form" camunda:candidateUsers="demo">
+      <bpmn:incoming>Flow_1bfknf4</bpmn:incoming>
+      <bpmn:outgoing>Flow_0l9j1eu</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1bfknf4" sourceRef="Activity_1oenwrm" targetRef="Activity_0mj6iqw" />
+    <bpmn:sequenceFlow id="Flow_0l9j1eu" sourceRef="Activity_0mj6iqw" targetRef="set-priority" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="camunda_task_process">
+      <bpmndi:BPMNShape id="EndEvent_0x6ir2l_di" bpmnElement="task-created">
+        <dc:Bounds x="1062" y="169" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1050" y="212" width="60" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1lgqxvc_di" bpmnElement="set-priority" isMarkerVisible="true">
+        <dc:Bounds x="675" y="162" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="740" y="177" width="81" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0keq0u4_di" bpmnElement="priority-assigned" isMarkerVisible="true">
+        <dc:Bounds x="925" y="162" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="969" y="153" width="82" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1z0u6q9_di" bpmnElement="assign-low">
+        <dc:Bounds x="780" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0mwr01b" bpmnElement="assign-high">
+        <dc:Bounds x="780" y="60" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="create-">
+        <dc:Bounds x="182" y="169" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="157" y="212" width="87" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_08mft2c_di" bpmnElement="create-new-task">
+        <dc:Bounds x="270" y="147" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0wff8mz" bpmnElement="Activity_1oenwrm">
+        <dc:Bounds x="430" y="147" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0bckeyg" bpmnElement="Activity_0mj6iqw">
+        <dc:Bounds x="550" y="147" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0jkhry0_di" bpmnElement="Flow_0jkhry0">
+        <di:waypoint x="975" y="187" />
+        <di:waypoint x="1062" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18ucaha_di" bpmnElement="Flow_18ucaha">
+        <di:waypoint x="700" y="162" />
+        <di:waypoint x="700" y="100" />
+        <di:waypoint x="780" y="100" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="489" y="83" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yt6ir5_di" bpmnElement="Flow_0yt6ir5">
+        <di:waypoint x="700" y="212" />
+        <di:waypoint x="700" y="260" />
+        <di:waypoint x="780" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="721" y="263" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0j8ty6h_di" bpmnElement="Flow_0j8ty6h">
+        <di:waypoint x="880" y="260" />
+        <di:waypoint x="950" y="260" />
+        <di:waypoint x="950" y="212" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rr22tq_di" bpmnElement="Flow_1rr22tq">
+        <di:waypoint x="880" y="100" />
+        <di:waypoint x="950" y="100" />
+        <di:waypoint x="950" y="162" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1fp17al_di" bpmnElement="SequenceFlow_1fp17al">
+        <di:waypoint x="218" y="187" />
+        <di:waypoint x="270" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1j6oysf_di" bpmnElement="Flow_1j6oysf">
+        <di:waypoint x="370" y="187" />
+        <di:waypoint x="430" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1bfknf4_di" bpmnElement="Flow_1bfknf4">
+        <di:waypoint x="480" y="227" />
+        <di:waypoint x="480" y="259" />
+        <di:waypoint x="600" y="259" />
+        <di:waypoint x="600" y="227" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0l9j1eu_di" bpmnElement="Flow_0l9j1eu">
+        <di:waypoint x="650" y="187" />
+        <di:waypoint x="675" y="187" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

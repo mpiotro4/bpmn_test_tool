@@ -5,6 +5,12 @@ class BpmnNode:
         self._decision_var = decision_var
         self._decision_var_val = decision_var_val
 
+    def __eq__(self, other):
+        return self.name == other.name
+
+    def __hash__(self):
+        return hash(self.name)
+
     @property
     def decision_var(self):
         return self._decision_var
