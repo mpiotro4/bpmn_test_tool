@@ -8,6 +8,8 @@ class ExtensionWrapper:
             self._guid = self._guid.strip('{}')
         self._level = extension.attrib.get(XC.LEVEL)
         self._join = extension.attrib.get(XC.JOIN)
+        if self._join:
+            self._join = self._join.strip('{}')
 
     @property
     def guid(self) -> str:

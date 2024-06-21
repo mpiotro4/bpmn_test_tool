@@ -29,7 +29,7 @@ class ScenarioWrapper:
         return self.G
 
     def _create_all_nodes(self):
-        self.nodes.extend(XmiNode(step.attrib.get(XC.GUID), step.attrib.get(XC.NAME), step.attrib.get(XC.LEVEL))
+        self.nodes.extend(XmiNode(step.attrib.get(XC.GUID).strip('{}'), step.attrib.get(XC.NAME), step.attrib.get(XC.LEVEL))
                           for step in self.steps)
         self.G.add_nodes_from(self.nodes)
 
@@ -45,6 +45,12 @@ class ScenarioWrapper:
     def find_node_by_level(self, level: str) -> Optional[XmiNode]:
         for node in self.nodes:
             if node.level == level:
+                return node
+        return None
+
+    def find_node_by_guid(self, guid: str) -> Optional[XmiNode]:
+        for node in self.nodes:
+            if node.guid == guid:
                 return node
         return None
 
