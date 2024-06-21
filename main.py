@@ -18,5 +18,9 @@ if __name__ == "__main__":
 
     graph_comparator = GraphCompatibilityAnalyzer()
     print(graph_comparator.calculate_node_compatibility_ratio(graphs[0], graph))
-    print(graph_comparator.calculate_path_compatibility_ratio(graphs[0], graph))
-    print(graph_comparator.calculate_compatibility(graphs[0], graph, 0.5))
+
+    paths_a = xmi_graph.use_cases_wrappers[0].scenario_wrappers[0].get_paths()
+    paths_b = bpmnGraph.get_all_paths()
+    print(graph_comparator.calculate_path_compatibility_ratio(paths_a, paths_b))
+
+    # print(graph_comparator.calculate_compatibility(graphs[0], graph, 0.5))

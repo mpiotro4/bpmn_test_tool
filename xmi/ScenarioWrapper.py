@@ -47,3 +47,14 @@ class ScenarioWrapper:
             if node.level == level:
                 return node
         return None
+
+    def get_paths(self):
+        graph = self.get_graph()
+        paths = []
+
+        for end_node in self.end_nodes:
+            if self.start_node != end_node and nx.has_path(graph, source=self.start_node, target=end_node):
+                simple_paths = list(nx.all_simple_paths(graph, source=self.start_node, target=end_node))
+                paths.extend(simple_paths)
+
+        return paths
