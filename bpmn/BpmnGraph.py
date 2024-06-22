@@ -1,3 +1,4 @@
+import os
 import xml.etree.ElementTree as ET
 import re
 import networkx as nx
@@ -26,6 +27,7 @@ class BpmnGraph:
         self.end_event = self.root.findall(BC.END_EVENT, self.namespace)
         self.start_event = self.root.findall(BC.START_EVENT, self.namespace)
         self.G = nx.Graph()
+        self.G.name = os.path.basename(path)
         self._create_all_nodes()
         self._create_all_edges()
         self.process_id = self.root.find(BC.PROCESS, self.namespace).get("id")
@@ -33,21 +35,30 @@ class BpmnGraph:
     def get_process_id(self):
         return self.process_id
 
-    def get_all_paths(self):
+    def get_paths(self):
+        graph = self.G
+        paths = []
         start_node = self._get_start_node()
-        end_node = self._get_end_node()
-        all_paths = list(nx.all_simple_paths(self.G, source=start_node, target=end_node))
-        return all_paths
+        end_nodes = self._get_end_nodes()
+        for end_node in end_nodes:
+            if start_node != end_node and nx.has_path(graph, source=start_node, target=end_node):
+                simple_paths = list(nx.all_simple_paths(graph, source=start_node, target=end_node))
+                paths.extend(simple_paths)
+
+        return paths
 
     def visualize_all_paths(self):
-        all_paths = self.get_all_paths()
+        all_paths = self.get_paths()
         GraphVisualizer.visualize_paths(self.G, all_paths)
 
     def _get_start_node(self):
         return self._get_node_by_id(self.start_event[0].get('id'))
 
-    def _get_end_node(self):
-        return self._get_node_by_id(self.end_event[0].get('id'))
+    def _get_end_nodes(self):
+        end_events = []
+        for event in self.end_event:
+            end_events.append(self._get_node_by_id(event.get('id')))
+        return end_events
 
     def get_graph(self):
         return self.G

@@ -1,0 +1,701 @@
+<?xml  version='1.0' encoding='windows-1252' ?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1627"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" name="Use Cases" visibility="public">
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" name="Autoryzacja uzytkownika" visibility="public">
+				<include xmi:type="uml:Include" xmi:id="EAID_31D21052_7C49_4326_AA68_29910B8B00EF" visibility="public" addition="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F"/>
+				<include xmi:type="uml:Include" xmi:id="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852" visibility="public" addition="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407"/>
+				<include xmi:type="uml:Include" xmi:id="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E" visibility="public" addition="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" visibility="public">
+				<memberEnd xmi:idref="EAID_dst2C65E2_429B_4797_A8DF_F79E046DFF23"/>
+				<memberEnd xmi:idref="EAID_src2C65E2_429B_4797_A8DF_F79E046DFF23"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src2C65E2_429B_4797_A8DF_F79E046DFF23" visibility="public" association="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst2C65E2_429B_4797_A8DF_F79E046DFF23" visibility="public" association="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F" name="Obs&#x142;uga sprawdzenia salda" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_D77F41CF_BC7C_48e0_B472_15700AD6D909" visibility="public">
+				<memberEnd xmi:idref="EAID_dst7F41CF_BC7C_48e0_B472_15700AD6D909"/>
+				<memberEnd xmi:idref="EAID_src7F41CF_BC7C_48e0_B472_15700AD6D909"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src7F41CF_BC7C_48e0_B472_15700AD6D909" visibility="public" association="EAID_D77F41CF_BC7C_48e0_B472_15700AD6D909" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst7F41CF_BC7C_48e0_B472_15700AD6D909" visibility="public" association="EAID_D77F41CF_BC7C_48e0_B472_15700AD6D909" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_9A030569_974D_434a_A2F2_D725463A21C1" name="Obs&#x142;uga wp&#x142;aty" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_3A4251C7_3063_4e2a_9B97_4A0E1D69BB92" visibility="public">
+				<memberEnd xmi:idref="EAID_dst4251C7_3063_4e2a_9B97_4A0E1D69BB92"/>
+				<memberEnd xmi:idref="EAID_src4251C7_3063_4e2a_9B97_4A0E1D69BB92"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src4251C7_3063_4e2a_9B97_4A0E1D69BB92" visibility="public" association="EAID_3A4251C7_3063_4e2a_9B97_4A0E1D69BB92" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst4251C7_3063_4e2a_9B97_4A0E1D69BB92" visibility="public" association="EAID_3A4251C7_3063_4e2a_9B97_4A0E1D69BB92" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_9A030569_974D_434a_A2F2_D725463A21C1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A" name="Obs&#x142;uga wyp&#x142;aty" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_8B0BEC81_7D2F_4623_A9F2_44C412A6DAC1" visibility="public">
+				<memberEnd xmi:idref="EAID_dst0BEC81_7D2F_4623_A9F2_44C412A6DAC1"/>
+				<memberEnd xmi:idref="EAID_src0BEC81_7D2F_4623_A9F2_44C412A6DAC1"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src0BEC81_7D2F_4623_A9F2_44C412A6DAC1" visibility="public" association="EAID_8B0BEC81_7D2F_4623_A9F2_44C412A6DAC1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst0BEC81_7D2F_4623_A9F2_44C412A6DAC1" visibility="public" association="EAID_8B0BEC81_7D2F_4623_A9F2_44C412A6DAC1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879" name="sprawdzenie PIN" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_426E63C2_95F2_4818_861F_5F39A6EB4C6A" visibility="public">
+				<memberEnd xmi:idref="EAID_dst6E63C2_95F2_4818_861F_5F39A6EB4C6A"/>
+				<memberEnd xmi:idref="EAID_src6E63C2_95F2_4818_861F_5F39A6EB4C6A"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src6E63C2_95F2_4818_861F_5F39A6EB4C6A" visibility="public" association="EAID_426E63C2_95F2_4818_861F_5F39A6EB4C6A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst6E63C2_95F2_4818_861F_5F39A6EB4C6A" visibility="public" association="EAID_426E63C2_95F2_4818_861F_5F39A6EB4C6A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" name="Sprawdzenie salda" visibility="public"/>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" name="Wplata" visibility="public"/>
+			<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" name="Wyplata" visibility="public"/>
+		</packagedElement>
+		<thecustomprofile:include base_Include="EAID_31D21052_7C49_4326_AA68_29910B8B00EF"/>
+		<thecustomprofile:include base_Include="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852"/>
+		<thecustomprofile:include base_Include="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" xmi:type="uml:Package" name="Use Cases" scope="public">
+				<model package2="EAID_17C4FCB2_80FE_489c_891A_55B1E6312FA1" package="EAPK_81ACC96C_3748_4fcd_A9E7_9712B3910AD8" tpos="0" ea_localid="24" ea_eleType="package"/>
+				<properties documentation="Contains Use Case that represent the value or goal that the Actors wish to achieve." isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-01 13:49:20" modified="2024-06-01 13:49:20" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Bankomat"/>
+				<packageproperties version="1.0" tpos="0"/>
+				<paths/>
+				<times created="2024-06-01 13:49:20" modified="2017-08-01 09:43:38" lastloaddate="2016-07-21 08:07:37" lastsavedate="2016-07-21 08:07:37"/>
+				<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"/>
+			</element>
+			<element xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:type="uml:UseCase" name="Autoryzacja uzytkownika" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="928" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:07:11" modified="2024-06-22 10:17:09" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Przypadek uzycia: Autoryzacja" type="Basic Path" weight="0.00" subject="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:id="EAID_F145E24D_6175_4caf_AB36_46CBD047263C">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wk&#x142;ada karte bankowa do bankomatu." guid="{7F8A15FC-AC72-4a00-B536-58AD08B08B11}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System prosi o wprowadzenie kodu PIN." guid="{EBC3CA5C-B083-4772-A438-59F51616EBB1}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wprowadza kod PIN." guid="{73DEA0CB-AE1D-4e1c-BDFC-503964ACE22D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System wysy&#x142;a kod PIN do banku w celu weryfikacji." guid="{13DD0EFF-B20A-473d-9695-30D21D81C070}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System weryfikuje poprawno&#x15B;&#x107; PIN" guid="{DCF667FA-20E3-4f9a-BE67-623555EDC097}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System wyswietla menu glowne bankomatu" guid="{487D7CC5-5E0E-4e56-9937-50FB390B210A}" level="6" uses="" useslist="" result="" state="" trigger="0" link="">
+									<extension level="6a" guid="{17DFFA07-16A8-4cc5-94E2-86899D3788F3}" join="End"/>
+								</step>
+								<context>
+									<item oldname="Sprawdzenie salda" guid="{8094C57A-4F2E-4b72-AE89-34173E2F567D}"/>
+									<item oldname="Klient" guid="{B538F262-3AE8-4115-9CBC-42347F3323A0}"/>
+									<item oldname="Wyplata" guid="{CCBC4D42-AEF2-4e77-86E0-A9BAA0902407}"/>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Wplata" guid="{635DEBAD-8EA1-40a9-9B7D-34B0CA34289F}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+					<EAScenario name="Wyjatek: Zly PIN" type="Exception" weight="1.00" subject="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" xmi:id="EAID_17DFFA07_16A8_4cc5_94E2_86899D3788F3">
+						<EAScenarioContent>
+							<path>
+								<step name="System wyswietla informacje o zlym PIN i oddaje karte" guid="{86E3A4E9-C46F-4e9b-8231-0861E1281579}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Sprawdzenie salda" guid="{8094C57A-4F2E-4b72-AE89-34173E2F567D}"/>
+									<item oldname="Klient" guid="{B538F262-3AE8-4115-9CBC-42347F3323A0}"/>
+									<item oldname="Wyplata" guid="{CCBC4D42-AEF2-4e77-86E0-A9BAA0902407}"/>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Wplata" guid="{635DEBAD-8EA1-40a9-9B7D-34B0CA34289F}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<UseCase xmi:id="EAID_31D21052_7C49_4326_AA68_29910B8B00EF" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F"/>
+					<UseCase xmi:id="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407"/>
+					<UseCase xmi:id="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D"/>
+					<Association xmi:id="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23" start="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0" end="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F" xmi:type="uml:UseCase" name="Obs&#x142;uga sprawdzenia salda" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="956" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-22 10:49:34" modified="2024-06-22 11:27:47" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F" xmi:id="EAID_BCF3F8AF_81E6_4969_B273_C89B942C2ED8">
+						<EAScenarioContent>
+							<path>
+								<step name="Bankomat wyswietla menu glowne" guid="{9D602B6E-15EE-4cfd-81B5-7018D55695A3}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Uzytkownik wybiera opcje &quot;sprawdzenie salda&quot;" guid="{A1C934D0-08CD-427e-A31C-41E8FBADE0E0}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat wysyla zapytanie do banku o stan konta" guid="{313666EA-FF45-41d7-8842-6C299968B890}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bank sprawdza stan konta klienta" guid="{5298D840-64C0-4df0-93ED-76590BD2B308}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat wyswietla stan konta" guid="{10EAD3D2-43C3-4350-B5CF-E67D61E0C3CF}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat oddaje karte" guid="{F7474642-5FE7-4acd-97AB-B8170F3ECA45}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_D77F41CF_BC7C_48e0_B472_15700AD6D909" start="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" end="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_9A030569_974D_434a_A2F2_D725463A21C1" xmi:type="uml:UseCase" name="Obs&#x142;uga wp&#x142;aty" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="955" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-22 10:49:28" modified="2024-06-22 11:26:06" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_9A030569_974D_434a_A2F2_D725463A21C1" xmi:id="EAID_B7A4D290_99D4_4332_A955_0B5C471ECD25">
+						<EAScenarioContent>
+							<path>
+								<step name="Bankomat wyswietla menu glowne" guid="{1B0E0DE7-A9F7-4daf-BA80-5A9DA5268E87}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Uzytkownik wybiera opcje wplata gotowki" guid="{D3DA10E4-9158-4cff-9686-94BADED7B149}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat przyjmuje banknoty" guid="{C8D70C24-4084-4246-A3C4-78AA71EF416C}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bakomat przelicza bankonty i wysyla informacje o wplacie do banku" guid="{5836CD48-C842-482e-A953-1F79A7D66EB7}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bank aktualizuje stan konta klienta" guid="{0FCFFFF0-9198-4bab-AC9A-876C66E73618}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat oddaje karte" guid="{E8D2B11B-C428-4803-BF8D-4E6D223C2445}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_3A4251C7_3063_4e2a_9B97_4A0E1D69BB92" start="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" end="EAID_9A030569_974D_434a_A2F2_D725463A21C1"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A" xmi:type="uml:UseCase" name="Obs&#x142;uga wyp&#x142;aty" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="954" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-22 10:49:20" modified="2024-06-22 11:01:28" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A" xmi:id="EAID_9DB637B7_321A_4082_9BF4_7DDFFBA3580A">
+						<EAScenarioContent>
+							<path>
+								<step name="Bankomat wyswietla menu glowne" guid="{25CE9968-5396-41c2-8709-B42045A01132}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Uzytkownik wybiera opcje &quot;wyplata gotowki&quot;" guid="{43054F19-1684-472b-A2A2-0CA6E605E8E3}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat prosi o wprowadzenie kwoty" guid="{FC3011B9-6D4E-4f83-B41E-16F7C96ADAFC}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat prosi bank o weryfikacje dostepnosci srodkow" guid="{CD60C7D3-633A-432f-B6D6-54B3F30085CB}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bank autoryzuje wyplate" guid="{D5B492C8-6F47-496e-9201-AF9809F86BAA}" level="5" uses="" useslist="" result="" state="" trigger="1" link="">
+									<extension level="5a" guid="{C2D40C62-6B92-46ec-9F83-83A31BBD7242}" join="{4984798B-E658-4fbf-896F-57944E7D84EF}"/>
+								</step>
+								<step name="Bank aktualizuje stan konta uzytownika" guid="{CE79DB09-305A-4829-B90B-3CD16885A986}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat wydaje banknoty" guid="{1A292D03-B4E5-4566-9E66-441EB1F69971}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat drukuje potwierdzenie" guid="{4984798B-E658-4fbf-896F-57944E7D84EF}" level="8" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat oddaje karte" guid="{CEB23BCC-7139-4a48-B382-21155113990E}" level="9" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+					<EAScenario name="Opcja: brak srodkow" type="Alternate" weight="1.00" subject="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A" xmi:id="EAID_C2D40C62_6B92_46ec_9F83_83A31BBD7242">
+						<EAScenarioContent>
+							<path>
+								<step name="Bank odmawia autoryzacji wyplaty" guid="{A353F9A7-5039-4df8-9BA1-38B403D1EAD8}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_8B0BEC81_7D2F_4623_A9F2_44C412A6DAC1" start="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" end="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879" xmi:type="uml:UseCase" name="sprawdzenie PIN" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="953" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-22 10:48:29" modified="2024-06-22 13:58:32" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879" xmi:id="EAID_C19EE38E_AF17_416d_B46D_D114763F2821">
+						<EAScenarioContent>
+							<path>
+								<step name="Karta zostaje umieszczona w bankomacie" guid="{6B816767-D199-4835-95CF-53E10C475CAC}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat prosi o podanie PIN" guid="{CFC1742F-3EF3-4736-8402-3FACF7FC454F}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat wysyla zapytanie do banku czy PIN poprawny" guid="{4DD53B0F-ED39-4f9a-A7E6-D5ED66E1E384}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bank weryfikuje poprawnosc PIN" guid="{130591F5-FF0C-41e5-B7CB-C8AE6544D949}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bank potwierdza poprawnosc PIN" guid="{0942B65A-3149-4d8b-9322-94964319E22D}" level="5" uses="" useslist="" result="" state="" trigger="1" link="">
+									<extension level="5a" guid="{553E48C8-0609-4d4a-9748-9AE375F4A5A9}" join="End"/>
+								</step>
+								<step name="Bankomat informuje o autoryzacji zakonczonej pomyslnie" guid="{0C4F2FBC-A4C0-40a7-8AC2-8D7923F80C18}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+					<EAScenario name="Opcja: Zly pin" type="Alternate" weight="1.00" subject="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879" xmi:id="EAID_553E48C8_0609_4d4a_9748_9AE375F4A5A9">
+						<EAScenarioContent>
+							<path>
+								<step name="Bank informuje o blednym PIN" guid="{8F4511C2-4521-4144-9829-CC02F0254A82}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat pokazuje komunikat o niepoprawnym PIN" guid="{6D04EAF2-C151-4be5-B33B-C85567B20BB0}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat oddaje karte" guid="{F9D9ED55-8D28-455f-B36D-7773C5D5AFDA}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<Association xmi:id="EAID_426E63C2_95F2_4818_861F_5F39A6EB4C6A" start="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6" end="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" xmi:type="uml:UseCase" name="Sprawdzenie salda" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="952" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:21:43" modified="2024-06-22 10:23:38" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Przypadek uzycia: sprawdzenie salda" type="Basic Path" weight="0.00" subject="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" xmi:id="EAID_0229A9F1_AF36_4be0_9280_860BADF35892">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wybiera opcje &quot;Sprawdzenie salda&quot; z menu glownego." guid="{8FBFD8DA-9C8E-4388-8ED3-DA5CDA6DD91C}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) wysy&#x142;a zadanie sprawdzenia salda do banku." guid="{00B31B42-4863-4757-9602-8FA64A2B8C96}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomat) wywietla saldo konta" guid="{A72929AD-99E8-4223-B74A-ACE3BB4D77DF}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomat) zwraca karte bankoa" guid="{5C4BE3FB-63C1-431a-80B1-6FE7B8B4BAA5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera karte bankowa i konczy transakcje." guid="{32B26F61-A8E5-4e0b-A850-C1B090B8FB0A}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<context>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<UseCase xmi:id="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" xmi:type="uml:UseCase" name="Wplata" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="950" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:21:21" modified="2024-06-22 10:18:04" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Przypadek uzycia: wplata" type="Basic Path" weight="0.00" subject="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" xmi:id="EAID_522EEADA_FA82_486f_8425_99B23410359F">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wybiera opcje &quot;Wplata gotowki&quot; z menu g&#x142;ownego." guid="{26FA8BBD-90E9-48e0-B50C-CB1ED770C011}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) prosi o w&#x142;ozenie gotowki do odpowiedniego otworu." guid="{E6B68985-182E-4331-9B7A-F69D407961C9}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wklada gotówke do otworu." guid="{3FC1CEB3-BAEC-4b46-BFDA-3DF6CB55E908}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) wysy&#x142;a informacje o wplacie do banku." guid="{67FA30C4-08D0-45d0-B7CA-A5B52ED98426}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) drukuje potwierdzenie transakcji." guid="{00EA73F9-DD19-4296-B568-0B42AC5333E5}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomat) zwraca kart&#x119; bankowa." guid="{649BCD61-B495-49bf-AFE4-B3619E57F18C}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera karte bankowa i potwierdzenie, konczac transakcje." guid="{FD36D1D3-026F-44d0-9A69-68B7708CFD11}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<context>
+									<item oldname="Bank" guid="{E2F39DBC-23B5-4ffc-B4BD-B12734F306A6}"/>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<UseCase xmi:id="EAID_31D21052_7C49_4326_AA68_29910B8B00EF" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:type="uml:UseCase" name="Wyplata" scope="public">
+				<model package="EAPK_17C4FCB2_80FE_489c_891A_55B1E6312FA1" tpos="0" ea_localid="951" ea_eleType="element"/>
+				<properties isSpecification="false" sType="UseCase" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="mpio" version="1.0" phase="1.0" created="2024-06-07 18:21:32" modified="2024-06-22 10:28:15" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Use Cases"/>
+				<EAModel.scenario>
+					<EAScenario name="Opcja: brak srodkow" type="Alternate" weight="1.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_0EC49FA8_8B20_447e_8041_724287B50531">
+						<EAScenarioContent>
+							<path>
+								<step name="System bankomat odbiera negatywna decyzje" guid="{BD089411-4116-416a-B859-E3AE8C42496A}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bankomat) wywietla komunikat o niewystarczajacych srodkach." guid="{4912DD0B-AA80-430d-BFC1-9B4E2955F6A2}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<context>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+					<EAScenario name="Przypadek uzycia: wyplata" type="Basic Path" weight="0.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_DCACEE6C_3C72_4646_93D8_EC57DE25B0FA">
+						<EAScenarioContent>
+							<path>
+								<step name="Klient wybiera opcje &quot;Wyplata gotówki&quot; z menu g&#x142;ownego." guid="{3CD20B28-0D07-4bda-92D4-FF679A5E0A25}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) prosi o wprowadzenie kwoty do wyplaty." guid="{DB121B63-281A-43b2-8DB3-C5607BD3DCDB}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wprowadza kwote." guid="{EA5E8D4C-BEB0-4ca4-A819-4D7920CDA15D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) wysy&#x142;a zadanie wyplaty do banku." guid="{E194E394-90DB-4ba0-99E7-22BF9FB56FFD}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="System (bakomat) odbiera pozytywna decyzje" guid="{CFEDFEE1-4759-408c-A27E-C00EC55E055D}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+									<extension level="5a" guid="{0EC49FA8-8B20-447e-8041-724287B50531}" join="{70AA3430-3D82-4f86-A8D0-4F8DFB4B249A}"/>
+								</step>
+								<step name="System (bankomatu) drukuje potwierdzenie transakcji." guid="{0C9F153B-6DEF-47c4-A1E6-A865C7FE26FE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera gotówke i potwierdzenie." guid="{70AA3430-3D82-4f86-A8D0-4F8DFB4B249A}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="System (bankomat) zwraca kart&#x119; bankow&#x105;." guid="{AD7FFAB4-A0E1-453e-A5C1-8A23B928356A}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera karte bankowa i konczy transakcje." guid="{9751A65E-33CD-48e6-B84F-065931ABD461}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<context>
+									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
+								</context>
+							</path>
+						</EAScenarioContent>
+					</EAScenario>
+				</EAModel.scenario>
+				<links>
+					<UseCase xmi:id="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852" start="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A" end="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_31D21052_7C49_4326_AA68_29910B8B00EF">
+				<source xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F">
+					<model ea_localid="950" type="UseCase" name="Wplata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="605"/>
+				<properties ea_type="UseCase" subtype="Includes" stereotype="include" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«include»"/>
+				<extendedProperties conditional="«include»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={8C320993-3FD1-4ce5-A05A-CA84EFD26C8D}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={BB135DCE-0732-4751-BCFB-612891924BCD};@ENDSTEREO;$DES;$CLT={31D21052-7C49-4326-AA68-29910B8B00EF}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_AF8CB79A_FC4B_49a8_96CC_EE2803C2D852">
+				<source xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407">
+					<model ea_localid="951" type="UseCase" name="Wyplata"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="607"/>
+				<properties ea_type="UseCase" subtype="Includes" stereotype="include" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«include»"/>
+				<extendedProperties conditional="«include»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={194BB7A2-1E52-49d8-8147-9CDD247B6559}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={BB135DCE-0732-4751-BCFB-612891924BCD};@ENDSTEREO;$DES;$CLT={AF8CB79A-FC4B-49a8-96CC-EE2803C2D852}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_F5B402CD_3CCE_4e48_9F34_B755856C501E">
+				<source xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D">
+					<model ea_localid="952" type="UseCase" name="Sprawdzenie salda"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="606"/>
+				<properties ea_type="UseCase" subtype="Includes" stereotype="include" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="«include»"/>
+				<extendedProperties conditional="«include»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={76F55AC3-72EC-4a64-875A-0853128F14D9}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={BB135DCE-0732-4751-BCFB-612891924BCD};@ENDSTEREO;$DES;$CLT={F5B402CD-3CCE-4e48-9F34-B755856C501E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_D22C65E2_429B_4797_A8DF_F79E046DFF23">
+				<source xmi:idref="EAID_B538F262_3AE8_4115_9CBC_42347F3323A0">
+					<model ea_localid="77" type="Actor" name="Klient"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_A390394A_6B6B_4b5c_8C50_0ECE5E20241A">
+					<model ea_localid="928" type="UseCase" name="Autoryzacja uzytkownika"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="591"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_D77F41CF_BC7C_48e0_B472_15700AD6D909">
+				<source xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F">
+					<model ea_localid="956" type="UseCase" name="Obs&#x142;uga sprawdzenia salda"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="609"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_3A4251C7_3063_4e2a_9B97_4A0E1D69BB92">
+				<source xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_9A030569_974D_434a_A2F2_D725463A21C1">
+					<model ea_localid="955" type="UseCase" name="Obs&#x142;uga wp&#x142;aty"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="610"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_8B0BEC81_7D2F_4623_A9F2_44C412A6DAC1">
+				<source xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A">
+					<model ea_localid="954" type="UseCase" name="Obs&#x142;uga wyp&#x142;aty"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="611"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_426E63C2_95F2_4818_861F_5F39A6EB4C6A">
+				<source xmi:idref="EAID_E2F39DBC_23B5_4ffc_B4BD_B12734F306A6">
+					<model ea_localid="76" type="Actor" name="Bank"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879">
+					<model ea_localid="953" type="UseCase" name="sprawdzenie PIN"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="612"/>
+				<properties ea_type="Association" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="thecustomprofile" nsPrefix="thecustomprofile" name="thecustomprofile" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="thecustomprofile">
+					<body> Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="include" name="include">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="include-base_Include" name="base_Include" association="Include_include">
+						<type href="http://schema.omg.org/spec/UML/2.1/Include"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Include_include" name="A_Include_include" memberEnd="extension_include include-base_Include">
+					<ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="extension_include" name="extension_include" type="include" isComposite="true" lower="0" upper="1" memberEnd="extension_include include-base_Include"/>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams/>
+	</xmi:Extension>
+</xmi:XMI>

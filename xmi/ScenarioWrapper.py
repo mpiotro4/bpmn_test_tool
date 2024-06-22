@@ -12,6 +12,7 @@ from xmi.XmiConstants import XmiConstants as XC
 class ScenarioWrapper:
     def __init__(self, scenario: ET.Element):
         self.G = nx.DiGraph()
+        self.G.name = scenario.get('name')
         self.nodes: List[XmiNode] = []
         self.id = transform_id(scenario.attrib.get(XC.SCHEMA_ID))
         self.extensions_wrappers: List[ExtensionWrapper] = []
