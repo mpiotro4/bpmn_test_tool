@@ -149,7 +149,7 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Use Cases"/>
 				<EAModel.scenario>
-					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F" xmi:id="EAID_BCF3F8AF_81E6_4969_B273_C89B942C2ED8">
+					<EAScenario name="Przypadek uzycia: Obsluga sprawdzenia salda" type="Basic Path" weight="0.00" subject="EAID_7FD39888_A7B7_40b8_94A2_E838F170C24F" xmi:id="EAID_BCF3F8AF_81E6_4969_B273_C89B942C2ED8">
 						<EAScenarioContent>
 							<path>
 								<step name="Bankomat wyswietla menu glowne" guid="{9D602B6E-15EE-4cfd-81B5-7018D55695A3}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -179,7 +179,7 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Use Cases"/>
 				<EAModel.scenario>
-					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_9A030569_974D_434a_A2F2_D725463A21C1" xmi:id="EAID_B7A4D290_99D4_4332_A955_0B5C471ECD25">
+					<EAScenario name="Przypadek uzycia: Obsluga wplaty" type="Basic Path" weight="0.00" subject="EAID_9A030569_974D_434a_A2F2_D725463A21C1" xmi:id="EAID_B7A4D290_99D4_4332_A955_0B5C471ECD25">
 						<EAScenarioContent>
 							<path>
 								<step name="Bankomat wyswietla menu glowne" guid="{1B0E0DE7-A9F7-4daf-BA80-5A9DA5268E87}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -209,7 +209,7 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Use Cases"/>
 				<EAModel.scenario>
-					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A" xmi:id="EAID_9DB637B7_321A_4082_9BF4_7DDFFBA3580A">
+					<EAScenario name="Przypadek uzycia: Obsluga wyplaty" type="Basic Path" weight="0.00" subject="EAID_93CC1576_CB96_4e1a_A727_D001CE50E54A" xmi:id="EAID_9DB637B7_321A_4082_9BF4_7DDFFBA3580A">
 						<EAScenarioContent>
 							<path>
 								<step name="Bankomat wyswietla menu glowne" guid="{25CE9968-5396-41c2-8709-B42045A01132}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -254,7 +254,7 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Use Cases"/>
 				<EAModel.scenario>
-					<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879" xmi:id="EAID_C19EE38E_AF17_416d_B46D_D114763F2821">
+					<EAScenario name="Przypadek uzycia: Sprawdzenie PIN" type="Basic Path" weight="0.00" subject="EAID_4DF49E4F_03FE_42bf_9D2B_E5050D5CB879" xmi:id="EAID_C19EE38E_AF17_416d_B46D_D114763F2821">
 						<EAScenarioContent>
 							<path>
 								<step name="Karta zostaje umieszczona w bankomacie" guid="{6B816767-D199-4835-95CF-53E10C475CAC}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -298,7 +298,7 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Use Cases"/>
 				<EAModel.scenario>
-					<EAScenario name="Przypadek uzycia: sprawdzenie salda" type="Basic Path" weight="0.00" subject="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" xmi:id="EAID_0229A9F1_AF36_4be0_9280_860BADF35892">
+					<EAScenario name="Przypadek uzycia: Sprawdzenie salda" type="Basic Path" weight="0.00" subject="EAID_8094C57A_4F2E_4b72_AE89_34173E2F567D" xmi:id="EAID_0229A9F1_AF36_4be0_9280_860BADF35892">
 						<EAScenarioContent>
 							<path>
 								<step name="Klient wybiera opcje &quot;Sprawdzenie salda&quot; z menu glownego." guid="{8FBFD8DA-9C8E-4388-8ED3-DA5CDA6DD91C}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -327,7 +327,7 @@
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="Use Cases"/>
 				<EAModel.scenario>
-					<EAScenario name="Przypadek uzycia: wplata" type="Basic Path" weight="0.00" subject="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" xmi:id="EAID_522EEADA_FA82_486f_8425_99B23410359F">
+					<EAScenario name="Przypadek uzycia: Wplata" type="Basic Path" weight="0.00" subject="EAID_635DEBAD_8EA1_40a9_9B7D_34B0CA34289F" xmi:id="EAID_522EEADA_FA82_486f_8425_99B23410359F">
 						<EAScenarioContent>
 							<path>
 								<step name="Klient wybiera opcje &quot;Wplata gotowki&quot; z menu g&#x142;ownego." guid="{26FA8BBD-90E9-48e0-B50C-CB1ED770C011}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -370,7 +370,7 @@
 							</path>
 						</EAScenarioContent>
 					</EAScenario>
-					<EAScenario name="Przypadek uzycia: wyplata" type="Basic Path" weight="0.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_DCACEE6C_3C72_4646_93D8_EC57DE25B0FA">
+					<EAScenario name="Przypadek uzycia: Wyplata" type="Basic Path" weight="0.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_DCACEE6C_3C72_4646_93D8_EC57DE25B0FA">
 						<EAScenarioContent>
 							<path>
 								<step name="Klient wybiera opcje &quot;Wyplata gotówki&quot; z menu g&#x142;ownego." guid="{3CD20B28-0D07-4bda-92D4-FF679A5E0A25}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
