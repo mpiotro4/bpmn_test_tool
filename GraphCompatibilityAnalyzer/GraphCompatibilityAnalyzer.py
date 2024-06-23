@@ -101,12 +101,26 @@ def generate_markdown_report(G1: nx.Graph, G2: nx.Graph, paths_a: List[List], pa
     compatibility_ratio = alfa * node_compatibility + (1 - alfa) * path_compatibility
 
     report += "## Współczynniki kompatybilności\n"
-    report += f"- Współczynnik kompatybilności wierzchołków: **{node_compatibility:.2f}**\n"
-    report += f"- Współczynnik kompatybilności ścieżek: **{path_compatibility:.2f}**\n"
-    report += f"- Wynikowy współczynnik kompatybilności grafów: **{compatibility_ratio:.2f}**\n"
+
+    report += f"- Współczynnik kompatybilności wierzchołków: {colorize_text(node_compatibility)}\n"
+    report += f"- Współczynnik kompatybilności ścieżek: {colorize_text(path_compatibility)}\n"
+    report += f"- Wynikowy współczynnik kompatybilności grafów: {colorize_text(compatibility_ratio)}\n"
     report += "\n"
 
     return report
+
+
+def colorize_text(value: float) -> str:
+    # Kolorowanie na podstawie wartości
+    if value == 1:
+        color = "lightgreen"  # pastelowy zielony
+    elif value == 0:
+        color = "#ff9999"  # czerwony
+    else:
+        hue = 120 * (1 - value)  # Gradient kolorów od czerwonego (0) do zielonego (120)
+        color = f"hsl({hue}, 100%, 50%)"
+
+    return f"<span style='color: {color}'>{value:.2f}</span>"
 
 
 def generate_report(G1: nx.Graph, G2: nx.Graph, paths_a: List, paths_b: List) -> str:
