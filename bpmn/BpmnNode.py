@@ -1,15 +1,26 @@
+import re
+
+
 class BpmnNode:
     def __init__(self, node_id, name, decision_var_val=None, decision_var=None):
         self.id = node_id
         self.name = name
+        self.normalized_name = self.normalize(name)
         self._decision_var = decision_var
         self._decision_var_val = decision_var_val
 
+    def normalize(self, s):
+        # Usuwanie znaków interpunkcyjnych
+        if s is not None:
+            s = re.sub(r'[^\w\s]', '', s)
+            # Ignorowanie wielkości liter
+            return s.lower()
+
     def __eq__(self, other):
-        return self.name == other.name
+        return self.normalized_name == other.normalized_name
 
     def __hash__(self):
-        return hash(self.name)
+        return hash(self.normalized_name)
 
     @property
     def decision_var(self):
