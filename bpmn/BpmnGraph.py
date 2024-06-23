@@ -11,12 +11,12 @@ from GraphVisualizer import GraphVisualizer
 
 
 class BpmnGraph:
-    nodes = []
     namespace = {
         'bpmn': 'http://www.omg.org/spec/BPMN/20100524/MODEL'
     }
 
     def __init__(self, path):
+        self.nodes = []
         self.path = path
         self.tree = ET.parse(path)
         self.root = self.tree.getroot()

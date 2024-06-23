@@ -16,6 +16,7 @@ class UseCaseWrapper:
         self.scenario_wrappers: List[ScenarioWrapper] = []
         self._create_scenarios()
         self.merge_scenarios()
+        self.scenario_wrapper = self.scenario_wrappers[0]
 
     def get_graphs(self) -> List[nx.DiGraph]:
         return [scenario_wrapper.get_graph() for scenario_wrapper in self.scenario_wrappers]

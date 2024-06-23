@@ -12,7 +12,7 @@ from xmi.XmiUtils import transform_id
 class XmiGraph:
     def __init__(self, path: str):
         self.path = path
-        self.use_cases_wrappers = []
+        self.use_cases_wrappers: List[UseCaseWrapper] = []
         self.tree = ET.parse(path)
         self.root = self.tree.getroot()
         self._create_use_cases(self.root.findall(XC.USE_CASE, XC.XMI_NAMESPACE))

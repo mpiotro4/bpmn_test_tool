@@ -1,31 +1,31 @@
-from GraphCompatibilityAnalyzer.GraphCompatibilityAnalyzer import GraphCompatibilityAnalyzer
+from GraphCompatibilityAnalyzer.GraphCompatibilityAnalyzer import generate_reports
 from demo import *
 
 if __name__ == "__main__":
     xmi_graph = XmiGraph('source_data/bankomat_2.xml')
     graphs = xmi_graph.get_graphs()
-    graph = xmi_graph.use_cases_wrappers[0].scenario_wrappers[0].get_graph()
+    graph = xmi_graph.use_cases_wrappers[1].scenario_wrapper.get_graph()
     node_labels = {node: node.name for node in graph.nodes()}
-    GraphVisualizer.visualize_graph(graph, node_labels)
+    # GraphVisualizer.visualize_graph(graph, node_labels)
+
     # for graph in graphs:
     #     node_labels = {node: node.name for node in graph.nodes()}
     #     GraphVisualizer.visualize_graph(graph, node_labels)
 
-    bpmnGraph = BpmnGraph("source_data/bpmn/autoryzacja_uzytkownika.bpmn")
-    graph = bpmnGraph.get_graph()
-    node_labels = {node: node.name for node in graph.nodes()}
-    GraphVisualizer.visualize_graph(graph, node_labels)
+    bpmnGraphs = []
+    bpmnFilesPaths = ["source_data/bpmn/autoryzacja_uzytkownika.bpmn", "source_data/bpmn/Wplata.bpmn"]
+    for bpmnFilePath in bpmnFilesPaths:
+        bpmnGraphs.append(BpmnGraph(bpmnFilePath))
 
-    graph_comparator = GraphCompatibilityAnalyzer()
-    print(graph_comparator.calculate_node_compatibility_ratio(graphs[0], graph))
+    bpmn_graph_1 = bpmnGraphs[0]
+    bpmn_graph_2 = bpmnGraphs[1]
+    node_labels = {node: node.name for node in bpmn_graph_2.get_graph().nodes()}
+    # GraphVisualizer.visualize_graph(bpmn_graph_2.get_graph(), node_labels)
 
-    paths_a = xmi_graph.use_cases_wrappers[0].scenario_wrappers[0].get_paths()
-    paths_b = bpmnGraph.get_paths()
-    print(graph_comparator.calculate_path_compatibility_ratio(paths_a, paths_b))
-    report = graph_comparator.generate_report(graphs[0], graph, paths_a, paths_b)
-    with open('output/report.txt', 'w') as file:
-        file.write(report)
+    paths_a = xmi_graph.use_cases_wrappers[0].scenario_wrapper.get_paths()
+    paths_b = bpmn_graph_1.get_paths()
 
-    report = graph_comparator.generate_markdown_report(graphs[0], graph, paths_a, paths_b)
-    with open('output/report.md', 'w') as file:
-        file.write(report)
+    tuple1 = (xmi_graph.use_cases_wrappers[0], bpmnGraphs[0])
+    tuple2 = (xmi_graph.use_cases_wrappers[1], bpmnGraphs[1])
+    tuple_list = [tuple1, tuple2]
+    generate_reports(tuple_list)
