@@ -5,14 +5,14 @@ from bpmn.BpmnWrapper import BpmnWrapper
 from xmi.UseCaseWrapper import UseCaseWrapper
 
 
-def calculate_node_compatibility_ratio(A: nx.Graph, B: nx.Graph) -> float:
-    common_nodes = set(A.nodes()).intersection(set(B.nodes()))
-    ratio = len(common_nodes) / len(A.nodes())
-    return ratio
+def calculate_node_compatibility_ratio(G1: nx.Graph, G2: nx.Graph) -> float:
+    nodes1 = set(G1.nodes)
+    nodes2 = set(G2.nodes)
+    common_nodes = nodes1.intersection(nodes2)
+    return len(common_nodes) / len(nodes1) if nodes1 else 0
 
 
-def calculate_path_compatibility_ratio(paths_a: List, paths_b: List) -> float:
-    # Pobierz wszystkie ścieżki w grafie A
+def calculate_path_compatibility_ratio(paths_a: List[List], paths_b: List[List]) -> float:
     compatible_paths = 0
 
     # Iteracja przez każdą ścieżkę w grafie A
@@ -23,13 +23,10 @@ def calculate_path_compatibility_ratio(paths_a: List, paths_b: List) -> float:
             if path_A_set.issubset(set(path_B)):
                 compatible_paths += 1
                 break
-
-    # Oblicz współczynnik kompatybilności ścieżek
-    ratio = compatible_paths / len(paths_a) if paths_a else 0
-    return ratio
+    return compatible_paths / len(paths_a) if paths_a else 0
 
 
-def generate_graph_compatibility_info(G1: nx.Graph, G2: nx.Graph, paths_a: List, paths_b: List) -> tuple:
+def generate_graph_compatibility_info(G1: nx.Graph, G2: nx.Graph, paths_a: List[List], paths_b: List[List]) -> tuple:
     nodes1 = set(G1.nodes)
     nodes2 = set(G2.nodes)
 
@@ -53,14 +50,30 @@ def generate_graph_compatibility_info(G1: nx.Graph, G2: nx.Graph, paths_a: List,
     node_compatibility = calculate_node_compatibility_ratio(G1, G2)
     path_compatibility = calculate_path_compatibility_ratio(paths_a, paths_b)
 
-    return (common_nodes, missing_nodes, compatible_paths, missing_paths, node_compatibility, path_compatibility)
+    return common_nodes, missing_nodes, compatible_paths, missing_paths, node_compatibility, path_compatibility
 
 
-def generate_markdown_report(G1: nx.Graph, G2: nx.Graph, paths_a: List, paths_b: List) -> str:
+def highlight_missing_path(path: List, original_paths: List[List]) -> str:
+    for original_path in original_paths:
+        missing_indices = [i for i, node in enumerate(path) if node not in original_path]
+        if missing_indices:
+            highlighted_path = ""
+            for i, node in enumerate(path):
+                if i in missing_indices:
+                    highlighted_path += f"<span style='color:#ff9999'>{node}</span>"
+                else:
+                    highlighted_path += str(node)
+                if i < len(path) - 1:
+                    highlighted_path += " -> "
+            return highlighted_path
+    return ' -> '.join(map(str, path))
+
+
+def generate_markdown_report(G1: nx.Graph, G2: nx.Graph, paths_a: List[List], paths_b: List[List]) -> str:
     common_nodes, missing_nodes, compatible_paths, missing_paths, node_compatibility, path_compatibility = generate_graph_compatibility_info(
         G1, G2, paths_a, paths_b)
 
-    report = "# Raport zgodności grafów\n\n"
+    report = "# Raport zgodności przypadku użycia UML z procesem biznesowym w notacji BPMN\n\n"
     report += "## Grafy\n"
     report += f"- **G1:** {G1.name}\n"
     report += f"- **G2:** {G2.name}\n"
@@ -70,7 +83,8 @@ def generate_markdown_report(G1: nx.Graph, G2: nx.Graph, paths_a: List, paths_b:
     report += f"- Liczba wierzchołków G1: **{len(G1.nodes)}**\n"
     report += f"- Liczba wierzchołków G2: **{len(G2.nodes)}**\n"
     report += f"- Liczba wspólnych wierzchołków: **{len(common_nodes)}**\n"
-    report += f"- Brakujące wierzchołki w G2: **{len(missing_nodes)}** - " + ', '.join(str(node) for node in missing_nodes) + "\n"
+    report += f"- Brakujące wierzchołki w G2: **{len(missing_nodes)}** - " + ', '.join(
+        str(node) for node in missing_nodes) + "\n"
     report += "\n"
 
     report += "## Ścieżki\n"
@@ -80,10 +94,8 @@ def generate_markdown_report(G1: nx.Graph, G2: nx.Graph, paths_a: List, paths_b:
     report += f"- Brakujące ścieżki w G2: **{len(missing_paths)}**\n"
     if missing_paths:
         for path in missing_paths:
-            path_str = ' -> '.join(str(node) for node in path)
-            report += f"  - Ścieżka: {path_str}\n"
-    #     report += "  - " + "\n  - ".join([str(path) for path in missing_paths]) + "\n"
-    # report += "\n"
+            highlighted_path = highlight_missing_path(path, paths_b)
+            report += f"  - Ścieżka: {highlighted_path}\n"
 
     alfa = 0.5
     compatibility_ratio = alfa * node_compatibility + (1 - alfa) * path_compatibility
