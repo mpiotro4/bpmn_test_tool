@@ -55,7 +55,9 @@ class UseCaseWrapper:
             merged_graph.add_edge(source.nodes[-1], join_merge_node)
 
         target.set_graph(merged_graph)
-        target.end_nodes.extend(source.end_nodes)
+
+        if join_merge_node is  None:
+            target.end_nodes.extend(source.end_nodes)
 
     def _find_join_merge_node(self, join_guid: str, target: ScenarioWrapper) -> Optional[XmiNode]:
         print("Join guid: " + join_guid)
