@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 from GraphVisualizer import GraphVisualizer
 from TestGenerator import TestGenerator
 from bpmn.FeatureGenerator import FeatureGenerator
-from bpmn.BpmnGraph import BpmnGraph
-from xmi.XmiGraph import XmiGraph
+from bpmn.BpmnWrapper import BpmnWrapper
+from xmi.XmiWrapper import XmiWrapper
 def run_demo():
     file_path = 'source_data/bankomat.xml'
-    xmi_graph = XmiGraph(file_path)
+    xmi_graph = XmiWrapper(file_path)
     graphs = xmi_graph.get_graphs()
     for graph in graphs:
         node_labels = {node: node.name for node in graph.nodes()}
@@ -34,7 +34,7 @@ def run_graph_join_example():
 
 
 def run_bpmn_demo():
-    bpmnGraph = BpmnGraph("source_data/task_process.bpmn")
+    bpmnGraph = BpmnWrapper("source_data/task_process.bpmn")
     # bpmnGraph = BpmnGraph("source_data/diagram_1.bpmn")
     graph = bpmnGraph.get_graph()
     node_labels = {node: node.name for node in graph.nodes()}

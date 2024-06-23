@@ -10,7 +10,7 @@ from bpmn.BpmnNodeFactory import BpmnNodeFactory
 from GraphVisualizer import GraphVisualizer
 
 
-class BpmnGraph:
+class BpmnWrapper:
     namespace = {
         'bpmn': 'http://www.omg.org/spec/BPMN/20100524/MODEL'
     }

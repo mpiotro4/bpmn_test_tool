@@ -1,7 +1,7 @@
 from typing import List
 import networkx as nx
 
-from bpmn.BpmnGraph import BpmnGraph
+from bpmn.BpmnWrapper import BpmnWrapper
 from xmi.UseCaseWrapper import UseCaseWrapper
 
 
@@ -129,7 +129,7 @@ def generate_report(G1: nx.Graph, G2: nx.Graph, paths_a: List, paths_b: List) ->
     return report
 
 
-def generate_reports(graphs_wrappers: List[tuple[UseCaseWrapper, BpmnGraph]], generate_txt: bool = False,
+def generate_reports(graphs_wrappers: List[tuple[UseCaseWrapper, BpmnWrapper]], generate_txt: bool = False,
                      generate_md: bool = True):
     for wrappers in graphs_wrappers:
         paths_a = wrappers[0].scenario_wrapper.get_paths()

@@ -9,7 +9,7 @@ from xmi.XmiConstants import XmiConstants as XC
 from xmi.XmiUtils import transform_id
 
 
-class XmiGraph:
+class XmiWrapper:
     def __init__(self, path: str):
         self.path = path
         self.use_cases_wrappers: List[UseCaseWrapper] = []

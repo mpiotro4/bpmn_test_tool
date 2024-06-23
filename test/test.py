@@ -1,11 +1,11 @@
 import unittest
-from bpmn.BpmnGraph import BpmnGraph
+from bpmn.BpmnWrapper import BpmnWrapper
 from bpmn.BpmnConstants import BpmnConstants as BC
 
 class TestBpmnGraph(unittest.TestCase):
 
     def setUp(self):
-        self.bpmn_graph = BpmnGraph("process_graph.bpmn")
+        self.bpmn_graph = BpmnWrapper("process_graph.bpmn")
 
     def test_node_creation(self):
         # Test if nodes are properly created during initialization
