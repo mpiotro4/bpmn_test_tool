@@ -362,8 +362,8 @@
 					<EAScenario name="Opcja: brak srodkow" type="Alternate" weight="1.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_0EC49FA8_8B20_447e_8041_724287B50531">
 						<EAScenarioContent>
 							<path>
-								<step name="System bankomat odbiera negatywna decyzje" guid="{BD089411-4116-416a-B859-E3AE8C42496A}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-								<step name="System (bankomat) wywietla komunikat o niewystarczajacych srodkach." guid="{4912DD0B-AA80-430d-BFC1-9B4E2955F6A2}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Banokmat odbiera negatywna decyzje" guid="{BD089411-4116-416a-B859-E3AE8C42496A}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat wyswietla komunikat o braku srodkow" guid="{4912DD0B-AA80-430d-BFC1-9B4E2955F6A2}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 								<context>
 									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
 								</context>
@@ -373,17 +373,17 @@
 					<EAScenario name="Przypadek uzycia: Wyplata" type="Basic Path" weight="0.00" subject="EAID_CCBC4D42_AEF2_4e77_86E0_A9BAA0902407" xmi:id="EAID_DCACEE6C_3C72_4646_93D8_EC57DE25B0FA">
 						<EAScenarioContent>
 							<path>
-								<step name="Klient wybiera opcje &quot;Wyplata gotówki&quot; z menu g&#x142;ownego." guid="{3CD20B28-0D07-4bda-92D4-FF679A5E0A25}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-								<step name="System (bankomat) prosi o wprowadzenie kwoty do wyplaty." guid="{DB121B63-281A-43b2-8DB3-C5607BD3DCDB}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-								<step name="Klient wprowadza kwote." guid="{EA5E8D4C-BEB0-4ca4-A819-4D7920CDA15D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-								<step name="System (bankomat) wysy&#x142;a zadanie wyplaty do banku." guid="{E194E394-90DB-4ba0-99E7-22BF9FB56FFD}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
-								<step name="System (bakomat) odbiera pozytywna decyzje" guid="{CFEDFEE1-4759-408c-A27E-C00EC55E055D}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
-									<extension level="5a" guid="{0EC49FA8-8B20-447e-8041-724287B50531}" join="{70AA3430-3D82-4f86-A8D0-4F8DFB4B249A}"/>
+								<step name="Klient wybiera opcje wyplata" guid="{3CD20B28-0D07-4bda-92D4-FF679A5E0A25}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat prosi o podanie kwoty" guid="{DB121B63-281A-43b2-8DB3-C5607BD3DCDB}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient wprowadza kwote" guid="{EA5E8D4C-BEB0-4ca4-A819-4D7920CDA15D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat wysyla zadanie wyplaty do banku" guid="{E194E394-90DB-4ba0-99E7-22BF9FB56FFD}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Bankomat odbiera pozytywna decyzje" guid="{CFEDFEE1-4759-408c-A27E-C00EC55E055D}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+									<extension level="5a" guid="{0EC49FA8-8B20-447e-8041-724287B50531}" join="{AD7FFAB4-A0E1-453e-A5C1-8A23B928356A}"/>
 								</step>
-								<step name="System (bankomatu) drukuje potwierdzenie transakcji." guid="{0C9F153B-6DEF-47c4-A1E6-A865C7FE26FE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
-								<step name="Klient odbiera gotówke i potwierdzenie." guid="{70AA3430-3D82-4f86-A8D0-4F8DFB4B249A}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
-								<step name="System (bankomat) zwraca kart&#x119; bankow&#x105;." guid="{AD7FFAB4-A0E1-453e-A5C1-8A23B928356A}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
-								<step name="Klient odbiera karte bankowa i konczy transakcje." guid="{9751A65E-33CD-48e6-B84F-065931ABD461}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat drukuje potwierdzenie transakcji" guid="{0C9F153B-6DEF-47c4-A1E6-A865C7FE26FE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera gotowke i potwierdzenie" guid="{70AA3430-3D82-4f86-A8D0-4F8DFB4B249A}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+								<step name="Bankomat zwraca karte" guid="{AD7FFAB4-A0E1-453e-A5C1-8A23B928356A}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+								<step name="Klient odbiera karte" guid="{9751A65E-33CD-48e6-B84F-065931ABD461}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
 								<context>
 									<item oldname="Autoryzacja uzytkownika" guid="{A390394A-6B6B-4b5c-8C50-0ECE5E20241A}"/>
 								</context>
