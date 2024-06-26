@@ -1,13 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1fss82l" targetNamespace="http://bpmn.io/schema/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1fss82l" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
   <bpmn:process id="Process_0cd7wjh" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1" />
+    <bpmn:startEvent id="StartEvent_1" name="Bankomat wyswietla menu glowne">
+      <bpmn:outgoing>Flow_080d8z9</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_1l3z196" name="Uzytkownik wybiera opcje &#34;sprawdzenie salda&#34;">
+      <bpmn:incoming>Flow_080d8z9</bpmn:incoming>
+      <bpmn:outgoing>Flow_167nz4p</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_080d8z9" sourceRef="StartEvent_1" targetRef="Activity_1l3z196" />
+    <bpmn:serviceTask id="Activity_1oczigl" name="Bankomat wysyla zapytanie do banku o stan konta">
+      <bpmn:incoming>Flow_167nz4p</bpmn:incoming>
+      <bpmn:outgoing>Flow_130sv3w</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_167nz4p" sourceRef="Activity_1l3z196" targetRef="Activity_1oczigl" />
+    <bpmn:serviceTask id="Activity_0vow1zu" name="Bank sprawdza stan konta klienta">
+      <bpmn:incoming>Flow_130sv3w</bpmn:incoming>
+      <bpmn:outgoing>Flow_1yp4vh6</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_130sv3w" sourceRef="Activity_1oczigl" targetRef="Activity_0vow1zu" />
+    <bpmn:serviceTask id="Activity_1wi97f9" name="Bankomat wyswietla stan konta">
+      <bpmn:incoming>Flow_1yp4vh6</bpmn:incoming>
+      <bpmn:outgoing>Flow_19ps3bj</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1yp4vh6" sourceRef="Activity_0vow1zu" targetRef="Activity_1wi97f9" />
+    <bpmn:serviceTask id="Activity_0jmzrfl" name="Bankomat oddaje karte">
+      <bpmn:incoming>Flow_19ps3bj</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dlrues</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_19ps3bj" sourceRef="Activity_1wi97f9" targetRef="Activity_0jmzrfl" />
+    <bpmn:endEvent id="Event_0ns4p9p" name="transakcja zakoczona">
+      <bpmn:incoming>Flow_0dlrues</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0dlrues" sourceRef="Activity_0jmzrfl" targetRef="Event_0ns4p9p" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0cd7wjh">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="179" y="159" width="36" height="36" />
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="142" width="78" height="40" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1l3z196_di" bpmnElement="Activity_1l3z196">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1oczigl_di" bpmnElement="Activity_1oczigl">
+        <dc:Bounds x="430" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0vow1zu_di" bpmnElement="Activity_0vow1zu">
+        <dc:Bounds x="590" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wi97f9_di" bpmnElement="Activity_1wi97f9">
+        <dc:Bounds x="750" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0jmzrfl_di" bpmnElement="Activity_0jmzrfl">
+        <dc:Bounds x="910" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ns4p9p_di" bpmnElement="Event_0ns4p9p">
+        <dc:Bounds x="1072" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1064" y="142" width="53" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_080d8z9_di" bpmnElement="Flow_080d8z9">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_167nz4p_di" bpmnElement="Flow_167nz4p">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="430" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_130sv3w_di" bpmnElement="Flow_130sv3w">
+        <di:waypoint x="530" y="117" />
+        <di:waypoint x="590" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1yp4vh6_di" bpmnElement="Flow_1yp4vh6">
+        <di:waypoint x="690" y="117" />
+        <di:waypoint x="750" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19ps3bj_di" bpmnElement="Flow_19ps3bj">
+        <di:waypoint x="850" y="117" />
+        <di:waypoint x="910" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dlrues_di" bpmnElement="Flow_0dlrues">
+        <di:waypoint x="1010" y="117" />
+        <di:waypoint x="1072" y="117" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
